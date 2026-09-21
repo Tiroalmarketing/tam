@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Review Widget Forge</title>
+<style>
+  :root{
+    --panel-bg:#14171c;
+    --panel-bg2:#1b1f26;
+    --panel-border:#2a2f38;
+    --text:#e7ebf1;
+    --text2:#93a0b1;
+    --accent:#4285F4;
+    --accent2:#34A853;
+    --danger:#EA4335;
+    --field-bg:#0f1115;
+    --field-border:#333a45;
+    --radius:10px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;}
+  body{
+    background:#0b0d10;
+    color:var(--text);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    font-size:14px;
+    display:flex;
+    min-height:100vh;
+  }
+  a{color:inherit;}
+  h1,h2,h3{margin:0;}
+
+  /* Layout */
+  .layout{display:flex; width:100%; min-height:100vh;}
+  .panel{
+    width:400px;
+    flex:none;
+    background:var(--panel-bg);
+    border-right:1px solid var(--panel-border);
+    overflow-y:auto;
+    max-height:100vh;
+    padding:16px;
+  }
+  .main{
+    flex:1;
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    padding:20px 24px;
+    gap:18px;
+    overflow-y:auto;
+    max-height:100vh;
+  }
+  .app-title{
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:4px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .app-title .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .app-sub{color:var(--text2); font-size:12px; margin-bottom:16px;}
+
+  /* Collapsible sections */
+  details.section{
+    background:var(--panel-bg2);
+    border:1px solid var(--panel-border);
+    border-radius:var(--radius);
+    margin-bottom:12px;
+    overflow:hidden;
+  }
+  details.section > summary{
+    cursor:pointer;
+    padding:11px 14px;
+    font-weight:600;
+    font-size:13px;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    user-select:none;
+  }
+  details.section > summary::-webkit-details-marker{display:none;}
+  details.section > summary::after{
+    content:"▾";
+    color:var(--text2);
+    transition:transform .15s ease;
+  }
+  details.section:not([open]) > summary::after{ transform:rotate(-90deg); }
+  .section-body{padding:2px 14px 14px;}
+
+  .field{margin-bottom:12px;}
+  .field label{
+    display:block;
+    font-size:12px;
+    color:var(--text2);
+    margin-bottom:5px;
+    font-weight:600;
+  }
+  .field .hint{font-size:11px; color:var(--text2); margin-top:4px; font-weight:400; line-height:1.4;}
+  .row{display:flex; gap:8px;}
+  .row > .field{flex:1; min-width:0;}
+  .check-field{display:flex; align-items:center; gap:8px; margin-bottom:12px;}
+  .check-field label{margin:0; font-size:12.5px; color:var(--text); font-weight:500;}
+
+  input[type=text], input[type=url], input[type=number], textarea, select{
+    width:100%;
+    background:var(--field-bg);
+    border:1px solid var(--field-border);
+    color:var(--text);
+    border-radius:7px;
+    padding:8px 9px;
+    font-size:13px;
+    font-family:inherit;
+  }
+  input[type=color]{
+    width:44px; height:32px; padding:2px; border-radius:7px;
+    border:1px solid var(--field-border); background:var(--field-bg); cursor:pointer;
+  }
+  textarea{resize:vertical; min-height:60px; line-height:1.4;}
+  input:focus, textarea:focus, select:focus, button:focus-visible{
+    outline:2px solid var(--accent); outline-offset:1px;
+  }
+  input[type=checkbox]{width:16px; height:16px; accent-color:var(--accent);}
+  input[type=radio]{accent-color:var(--accent);}
+
+  .radio-group{display:flex; flex-direction:column; gap:8px;}
+  .radio-opt{display:flex; align-items:flex-start; gap:8px; cursor:pointer; font-size:13px;}
+  .radio-opt .opt-title{font-weight:600;}
+  .radio-opt .opt-desc{display:block; font-size:11.5px; color:var(--text2); font-weight:400;}
+
+  button{
+    font-family:inherit;
+    cursor:pointer;
+    border:none;
+    border-radius:7px;
+    font-size:12.5px;
+    font-weight:600;
+    padding:8px 12px;
+  }
+  .btn-primary{background:var(--accent); color:#fff;}
+  .btn-primary:hover{background:#3574d9;}
+  .btn-ghost{background:transparent; color:var(--text); border:1px solid var(--field-border);}
+  .btn-ghost:hover{border-color:var(--accent); color:var(--accent);}
+  .btn-danger{background:transparent; color:var(--danger); border:1px solid #4a2a28;}
+  .btn-danger:hover{background:rgba(234,67,53,.12);}
+  .btn-sm{padding:5px 8px; font-size:11.5px;}
+  .btn-row{display:flex; gap:8px; flex-wrap:wrap;}
+
+  .review-item{
+    border:1px solid var(--field-border);
+    border-radius:8px;
+    padding:10px;
+    margin-bottom:10px;
+    background:#10131810;
+  }
+  .review-item-head{
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:8px;
+  }
+  .review-item-head .name{font-size:12px; font-weight:700; color:var(--text2);}
+  .review-item-actions{display:flex; gap:4px;}
+  .review-item-actions button{padding:3px 7px; font-size:12px; line-height:1;}
+
+  .saved-item{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:7px 9px; border:1px solid var(--field-border); border-radius:7px;
+    margin-bottom:6px; font-size:12.5px;
+  }
+  .saved-item .name{font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .empty-note{color:var(--text2); font-size:12px; font-style:italic;}
+
+  .note-box{
+    background:rgba(66,133,244,.08);
+    border:1px solid rgba(66,133,244,.35);
+    border-radius:7px;
+    padding:8px 10px;
+    font-size:11.5px;
+    color:#c7d7f7;
+    line-height:1.5;
+    margin-top:6px;
+  }
+
+  /* Main / preview area */
+  .toolbar{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+  .toolbar h2{font-size:14px;}
+  .bg-toggle{display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text2);}
+  .bg-toggle select{width:auto; padding:6px 8px;}
+
+  .preview-wrap{
+    border:1px solid var(--panel-border);
+    border-radius:12px;
+    overflow:hidden;
+    background:#20242c;
+    min-height:200px;
+  }
+  #previewFrame{
+    width:100%;
+    border:0;
+    display:block;
+    background:transparent;
+    min-height:180px;
+  }
+
+  .code-section{
+    background:var(--panel-bg2);
+    border:1px solid var(--panel-border);
+    border-radius:12px;
+    padding:14px;
+  }
+  .code-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; flex-wrap:wrap; gap:8px;}
+  #codeOutput{
+    width:100%;
+    min-height:220px;
+    background:#0a0c0f;
+    border:1px solid var(--field-border);
+    color:#d7f7c1;
+    font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace;
+    font-size:12px;
+    line-height:1.5;
+    border-radius:8px;
+    padding:12px;
+  }
+
+  .toast{
+    position:fixed;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:#1c2128;
+    border:1px solid var(--accent2);
+    color:#eafff0;
+    padding:10px 18px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:600;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease;
+    z-index:999;
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+
+  @media (max-width: 900px){
+    .layout{flex-direction:column;}
+    .panel{width:100%; max-height:none; border-right:none; border-bottom:1px solid var(--panel-border);}
+    .main{max-height:none;}
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ===================== LEFT PANEL ===================== -->
+  <div class="panel">
+    <div class="app-title"><span class="dot"></span>Review Widget Forge</div>
+    <div class="app-sub">Crea un widget de reseñas estilo Google, 100% autocontenido, listo para incrustar.</div>
+
+    <div class="btn-row" style="margin-bottom:14px;">
+      <button class="btn-ghost btn-sm" id="resetConfig" type="button">↺ Reiniciar</button>
+    </div>
+
+    <!-- TIPO -->
+    <details class="section" open>
+      <summary>Tipo</summary>
+      <div class="section-body">
+        <div class="field">
+          <label>Variante del widget</label>
+          <div class="radio-group">
+            <label class="radio-opt">
+              <input type="radio" name="variant" value="compact">
+              <span><span class="opt-title">Barra compacta</span><span class="opt-desc">Una línea: marca, estrellas, puntuación y nº de reseñas.</span></span>
+            </label>
+            <label class="radio-opt">
+              <input type="radio" name="variant" value="header">
+              <span><span class="opt-title">Cabecera + carrusel</span><span class="opt-desc">Tarjeta con cabecera y carrusel horizontal de reseñas.</span></span>
+            </label>
+            <label class="radio-opt">
+              <input type="radio" name="variant" value="floating">
+              <span><span class="opt-title">Botón flotante</span><span class="opt-desc">Burbuja fija que abre un panel emergente con las reseñas.</span></span>
+            </label>
+          </div>
+        </div>
+        <div class="field" id="floatingPositionField" style="display:none;">
+          <label for="floatingPosition">Posición del botón flotante</label>
+          <select id="floatingPosition">
+            <option value="bottom-right">Abajo a la derecha</option>
+            <option value="bottom-left">Abajo a la izquierda</option>
+          </select>
+        </div>
+      </div>
+    </details>
+
+    <!-- APARIENCIA -->
+    <details class="section" open>
+      <summary>Apariencia</summary>
+      <div class="section-body">
+        <div class="row">
+          <div class="field">
+            <label for="theme">Tema</label>
+            <select id="theme">
+              <option value="light">Claro</option>
+              <option value="dark">Oscuro</option>
+            </select>
+          </div>
+          <div class="field" style="flex:0 0 60px;">
+            <label for="accent">Acento</label>
+            <input type="color" id="accent" value="#4285F4">
+          </div>
+        </div>
+        <div class="check-field">
+          <input type="checkbox" id="showBrand">
+          <label for="showBrand">Mostrar marca (wordmark)</label>
+        </div>
+        <div class="field">
+          <label for="brandLabel">Texto de la marca</label>
+          <input type="text" id="brandLabel" maxlength="24">
+        </div>
+        <div class="check-field">
+          <input type="checkbox" id="showAvatars">
+          <label for="showAvatars">Mostrar avatar en las reseñas</label>
+        </div>
+        <div class="field">
+          <label for="readMoreText">Texto "leer más"</label>
+          <input type="text" id="readMoreText" maxlength="30">
+        </div>
+        <div class="field">
+          <label for="readLessText">Texto "leer menos"</label>
+          <input type="text" id="readLessText" maxlength="30">
+          <div class="hint">El texto de reseña se corta a 3 líneas; si ocupa más, se añade este enlace automáticamente para expandirla.</div>
+        </div>
+        <div class="note-box">
+          Aviso: el uso de nombres/marcas de terceros (p. ej. "Google") es responsabilidad exclusiva de quien publica el widget. Úsalo solo con reseñas genuinas y reales, cumpliendo las políticas de la plataforma correspondiente.
+        </div>
+      </div>
+    </details>
+
+    <!-- DATOS -->
+    <details class="section" open>
+      <summary>Datos</summary>
+      <div class="section-body">
+        <div class="row">
+          <div class="field">
+            <label for="score">Puntuación media</label>
+            <input type="number" id="score" min="1" max="5" step="0.1">
+          </div>
+          <div class="field">
+            <label for="reviewCount">Nº de reseñas</label>
+            <input type="number" id="reviewCount" min="0" step="1">
+          </div>
+        </div>
+        <div class="field">
+          <label for="reviewsWord">Texto tras el número (idioma libre)</label>
+          <input type="text" id="reviewsWord" maxlength="30" placeholder="reseñas">
+          <div class="hint">Ejemplo: "reseñas", "opiniones", "reviews"... se muestra como "128 reseñas".</div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="ratingWord">Palabra de valoración</label>
+            <input type="text" id="ratingWord" maxlength="20">
+          </div>
+          <div class="field" style="flex:0 0 70px; display:flex; align-items:flex-end;">
+            <button class="btn-ghost btn-sm" id="ratingWordAuto" type="button" style="width:100%;">Auto</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="writeReviewText">Texto del botón</label>
+          <input type="text" id="writeReviewText" maxlength="40">
+        </div>
+        <div class="field">
+          <label for="writeReviewUrl">Enlace "Escribir una reseña"</label>
+          <input type="url" id="writeReviewUrl" placeholder="https://...">
+        </div>
+      </div>
+    </details>
+
+    <!-- RESUMEN -->
+    <details class="section">
+      <summary>Resumen (tarjeta IA)</summary>
+      <div class="section-body">
+        <div class="check-field">
+          <input type="checkbox" id="summaryEnabled">
+          <label for="summaryEnabled">Mostrar tarjeta de resumen</label>
+        </div>
+        <div class="field">
+          <label for="summaryAvatar1">Avatar 1 (URL, opcional)</label>
+          <input type="url" id="summaryAvatar1">
+        </div>
+        <div class="field">
+          <label for="summaryAvatar2">Avatar 2 (URL, opcional)</label>
+          <input type="url" id="summaryAvatar2">
+        </div>
+        <div class="field">
+          <label for="summaryAvatar3">Avatar 3 (URL, opcional)</label>
+          <input type="url" id="summaryAvatar3">
+        </div>
+        <div class="field">
+          <label for="summaryText">Texto del resumen</label>
+          <textarea id="summaryText"></textarea>
+        </div>
+      </div>
+    </details>
+
+    <!-- RESEÑAS -->
+    <details class="section">
+      <summary>Reseñas</summary>
+      <div class="section-body">
+        <div id="reviewsContainer"></div>
+        <div class="btn-row">
+          <button class="btn-primary btn-sm" id="addReview" type="button">+ Añadir reseña</button>
+        </div>
+      </div>
+    </details>
+
+    <!-- GUARDADAS -->
+    <details class="section">
+      <summary>Configuraciones guardadas</summary>
+      <div class="section-body">
+        <div class="row">
+          <div class="field">
+            <label for="configName">Nombre (ej. cliente)</label>
+            <input type="text" id="configName" placeholder="Nombre del cliente">
+          </div>
+        </div>
+        <div class="btn-row" style="margin-bottom:12px;">
+          <button class="btn-primary btn-sm" id="saveConfig" type="button">Guardar</button>
+        </div>
+        <div id="savedConfigsList"></div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ===================== MAIN: PREVIEW + CODE ===================== -->
+  <div class="main">
+    <div class="toolbar">
+      <h2>Vista previa</h2>
+      <div class="bg-toggle">
+        Fondo del sitio:
+        <select id="previewBg">
+          <option value="light">Claro</option>
+          <option value="dark">Oscuro</option>
+        </select>
+      </div>
+    </div>
+    <div class="preview-wrap">
+      <iframe id="previewFrame" title="Vista previa del widget" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+    </div>
+
+    <div class="code-section">
+      <div class="code-head">
+        <h2>Código para incrustar</h2>
+        <div class="btn-row">
+          <button class="btn-ghost btn-sm" id="regenId" type="button">Regenerar ID</button>
+          <button class="btn-ghost btn-sm" id="copyCode" type="button">Copiar</button>
+          <button class="btn-primary btn-sm" id="downloadCode" type="button">Descargar .html</button>
+        </div>
+      </div>
+      <textarea id="codeOutput" readonly spellcheck="false"></textarea>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------------------------------------------------------
+   * Utilidades
+   * ------------------------------------------------------------- */
+  function escapeHtml(str){
+    str = (str === null || str === undefined) ? "" : String(str);
+    return str.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+              .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+  }
+  function sanitizeUrl(url){
+    url = (url || "").trim();
+    if (!url) return "";
+    if (/^\s*javascript:/i.test(url)) return "";
+    return url;
+  }
+  function isValidColor(c){
+    return /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(c || "");
+  }
+  function makeId(){
+    return "rw-" + Math.random().toString(36).slice(2, 8);
+  }
+  function uid(){
+    return "r" + Math.random().toString(36).slice(2, 9);
+  }
+  function clampNum(n, min, max){
+    n = parseFloat(n);
+    if (isNaN(n)) n = min;
+    return Math.max(min, Math.min(max, n));
+  }
+  function getPath(obj, path){
+    return path.split(".").reduce(function(c,k){ return c ? c[k] : undefined; }, obj);
+  }
+  function setPath(obj, path, value){
+    var parts = path.split(".");
+    var cur = obj;
+    for (var i=0; i<parts.length-1; i++){ cur = cur[parts[i]]; }
+    cur[parts[parts.length-1]] = value;
+  }
+  function deriveRatingWord(score){
+    score = parseFloat(score) || 0;
+    if (score >= 4.8) return "Excelente";
+    if (score >= 4.3) return "Muy bueno";
+    if (score >= 3.5) return "Bueno";
+    if (score >= 2.5) return "Regular";
+    return "Deficiente";
+  }
+  var toastTimer = null;
+  function toast(msg){
+    var el = document.getElementById("toast");
+    el.textContent = msg;
+    el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ el.classList.remove("show"); }, 2200);
+  }
+
+  /* ---------------------------------------------------------------
+   * Estado
+   * ------------------------------------------------------------- */
+  function defaultState(){
+    return {
+      id: makeId(),
+      variant: "header",
+      theme: "light",
+      accent: "#4285F4",
+      showBrand: true,
+      brandLabel: "Google",
+      showAvatars: true,
+      readMoreText: "Leer más",
+      readLessText: "Leer menos",
+      score: 4.9,
+      reviewCount: 328,
+      reviewsWord: "reseñas",
+      ratingWord: "Excelente",
+      writeReviewText: "Escribir una reseña",
+      writeReviewUrl: "https://g.page/r/ejemplo/review",
+      floatingPosition: "bottom-right",
+      summary: {
+        enabled: true,
+        avatars: ["", "", ""],
+        text: "Los clientes destacan la atención personalizada, la rapidez del servicio y una muy buena relación calidad-precio."
+      },
+      reviews: [
+        { id: uid(), name: "Marta G.", avatarUrl: "", avatarInitial: "M", avatarColor: "#4285F4", score: 5, date: "hace 2 semanas", text: "Un servicio excelente de principio a fin. El equipo fue muy atento y resolvió todas mis dudas rápidamente. Sin duda volveré a confiar en ellos y los recomiendo a cualquiera que busque un trato profesional y cercano.", verified: true },
+        { id: uid(), name: "Javier R.", avatarUrl: "", avatarInitial: "J", avatarColor: "#EA4335", score: 5, date: "hace 1 mes", text: "Muy contento con el resultado final. La comunicación fue clara durante todo el proceso.", verified: true },
+        { id: uid(), name: "Laura P.", avatarUrl: "", avatarInitial: "L", avatarColor: "#34A853", score: 4, date: "hace 1 mes", text: "Buena atención en general, aunque el tiempo de espera fue un poco más largo de lo esperado. Aun así el resultado mereció la pena.", verified: false },
+        { id: uid(), name: "Carlos M.", avatarUrl: "", avatarInitial: "C", avatarColor: "#FBBC05", score: 5, date: "hace 2 meses", text: "Superó mis expectativas. Un equipo muy profesional, atento a cada detalle y con una comunicación impecable en todo momento.", verified: true },
+        { id: uid(), name: "Sofía T.", avatarUrl: "", avatarInitial: "S", avatarColor: "#4285F4", score: 5, date: "hace 3 meses", text: "Totalmente recomendable. Rápidos, eficaces y con muy buen trato.", verified: true }
+      ]
+    };
+  }
+  var state = defaultState();
+
+  /* ---------------------------------------------------------------
+   * Generación del widget embebible (marcado + CSS + JS aislados)
+   * ------------------------------------------------------------- */
+  function renderWordmark(label){
+    var palette = ["#4285F4","#EA4335","#FBBC05","#4285F4","#34A853","#EA4335"];
+    var i = 0;
+    var chars = Array.from(String(label || ""));
+    var spans = chars.map(function(ch){
+      if (ch === " ") { return " "; }
+      var color = palette[i % palette.length];
+      i++;
+      return '<span style="color:' + color + '">' + escapeHtml(ch) + "</span>";
+    }).join("");
+    return '<span class="rw-word"><span aria-hidden="true">' + spans + '</span><span class="rw-sr-only">' + escapeHtml(label) + "</span></span>";
+  }
+  function renderStars(score, small){
+    var pct = Math.max(0, Math.min(100, (parseFloat(score) || 0) / 5 * 100));
+    return '<span class="rw-stars' + (small ? " rw-stars-sm" : "") + '" role="img" aria-label="' + escapeHtml(score) + ' de 5 estrellas">' +
+      '<span class="rw-stars-bg" aria-hidden="true">★★★★★</span>' +
+      '<span class="rw-stars-fg" aria-hidden="true" style="width:' + pct + '%">★★★★★</span>' +
+      "</span>";
+  }
+  function renderCheck(){
+    return '<span class="rw-check" title="Reseña verificada" aria-label="Reseña verificada">✓</span>';
+  }
+  function renderMiniG(){
+    return '<span class="rw-minig" aria-hidden="true">G</span>';
+  }
+  function renderAvatar(r, show){
+    if (!show) return "";
+    var url = sanitizeUrl(r.avatarUrl);
+    if (url) {
+      return '<img class="rw-avatar" src="' + escapeHtml(url) + '" alt="" loading="lazy" referrerpolicy="no-referrer">';
+    }
+    var raw = (r.avatarInitial || r.name || "?").trim();
+    var initial = escapeHtml((raw.charAt(0) || "?").toUpperCase());
+    var color = isValidColor(r.avatarColor) ? r.avatarColor : "#4285F4";
+    return '<span class="rw-avatar rw-avatar-fallback" style="background:' + color + '" aria-hidden="true">' + initial + "</span>";
+  }
+  function renderReviewCard(r, cfg){
+    return '<article class="rw-card">' +
+      '<div class="rw-card-top">' +
+        renderAvatar(r, cfg.showAvatars) +
+        '<div class="rw-card-id">' +
+          '<div class="rw-card-name">' + escapeHtml(r.name || "Cliente") + (r.verified ? renderCheck() : "") + "</div>" +
+          '<div class="rw-card-sub">' + renderStars(r.score, true) + '<span class="rw-date">' + escapeHtml(r.date || "") + "</span></div>" +
+        "</div>" +
+        renderMiniG() +
+      "</div>" +
+      '<div class="rw-card-text-wrap">' +
+        '<p class="rw-card-text rw-clamped">' + escapeHtml(r.text || "") + "</p>" +
+        '<button type="button" class="rw-readmore" data-more="' + escapeHtml(cfg.readMoreText || "Leer más") + '" data-less="' + escapeHtml(cfg.readLessText || "Leer menos") + '" hidden>' + escapeHtml(cfg.readMoreText || "Leer más") + "</button>" +
+      "</div>" +
+    "</article>";
+  }
+  function renderSummaryCard(cfg){
+    if (!cfg.summary.enabled) return "";
+    var avatarsHtml = cfg.summary.avatars.slice(0,3).map(function(url, idx){
+      var u = sanitizeUrl(url);
+      if (u) {
+        return '<img class="rw-summary-avatar" style="z-index:' + (3-idx) + '" src="' + escapeHtml(u) + '" alt="" loading="lazy" referrerpolicy="no-referrer">';
+      }
+      var fallback = ["#4285F4","#34A853","#FBBC05"][idx % 3];
+      return '<span class="rw-summary-avatar rw-avatar-fallback" style="z-index:' + (3-idx) + ';background:' + fallback + '"></span>';
+    }).join("");
+    return '<div class="rw-summary-card">' +
+      '<div class="rw-summary-avatars" aria-hidden="true">' + avatarsHtml + "</div>" +
+      '<div class="rw-summary-body">' +
+        '<div class="rw-summary-title">Resumen de reseñas</div>' +
+        '<p class="rw-summary-text">' + escapeHtml(cfg.summary.text || "") + "</p>" +
+      "</div>" +
+    "</div>";
+  }
+  function renderHeaderCard(cfg){
+    var url = sanitizeUrl(cfg.writeReviewUrl) || "#";
+    return '<div class="rw-headercard">' +
+      '<div class="rw-headercard-left">' +
+        (cfg.showBrand ? renderWordmark(cfg.brandLabel) : "") +
+        '<div class="rw-headercard-meta">' +
+          '<span class="rw-ratingword">' + escapeHtml(cfg.ratingWord || "") + "</span>" +
+          renderStars(cfg.score, false) +
+          '<span class="rw-scoreline">' + escapeHtml(parseFloat(cfg.score || 0).toFixed(1)) + " | " + escapeHtml(cfg.reviewCount || 0) + " " + escapeHtml(cfg.reviewsWord || "") + "</span>" +
+        "</div>" +
+      "</div>" +
+      '<a class="rw-writebtn" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(cfg.writeReviewText || "") + "</a>" +
+    "</div>";
+  }
+  function renderCarousel(cfg){
+    var cards = cfg.reviews.map(function(r){ return renderReviewCard(r, cfg); }).join("");
+    return '<div class="rw-carousel-wrap">' +
+      '<button type="button" class="rw-chev rw-chev-left" aria-label="Reseña anterior">‹</button>' +
+      '<div class="rw-track" tabindex="0">' + cards + "</div>" +
+      '<button type="button" class="rw-chev rw-chev-right" aria-label="Reseña siguiente">›</button>' +
+    "</div>";
+  }
+  function renderHeaderBody(cfg){
+    return renderHeaderCard(cfg) + renderSummaryCard(cfg) + renderCarousel(cfg);
+  }
+
+  function widgetCss(cfg){
+    var light = cfg.theme !== "dark";
+    var id = cfg.id;
+    var bg = light ? "#ffffff" : "#1b2129";
+    var border = light ? "#e7eaef" : "#323b48";
+    var text = light ? "#1f2733" : "#f2f4f7";
+    var text2 = light ? "#63707f" : "#9aa7b5";
+    var shadow = light ? "0 2px 12px rgba(24,39,75,.08)" : "0 2px 12px rgba(0,0,0,.45)";
+    var starBg = light ? "#dde1e7" : "#454e5b";
+    var accent = isValidColor(cfg.accent) ? cfg.accent : "#4285F4";
+
+    return "" +
+    "#" + id + "{--rw-bg:" + bg + ";--rw-border:" + border + ";--rw-text:" + text + ";--rw-text2:" + text2 + ";--rw-shadow:" + shadow + ";--rw-accent:" + accent + ";font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--rw-text);}\n" +
+    "#" + id + " *,#" + id + " *::before,#" + id + " *::after{box-sizing:border-box;}\n" +
+    "#" + id + " [hidden]{display:none !important;}\n" +
+    "#" + id + " .rw-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}\n" +
+    "#" + id + " .rw-word{font-size:20px;font-weight:700;letter-spacing:.2px;}\n" +
+    "#" + id + " .rw-stars{position:relative;display:inline-block;line-height:1;white-space:nowrap;font-size:16px;letter-spacing:2px;}\n" +
+    "#" + id + " .rw-stars-sm{font-size:13px;}\n" +
+    "#" + id + " .rw-stars-bg{color:" + starBg + ";}\n" +
+    "#" + id + " .rw-stars-fg{position:absolute;top:0;left:0;overflow:hidden;white-space:nowrap;color:#FBBC05;}\n" +
+    "#" + id + " .rw-check{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#4285F4;color:#fff;font-size:9px;line-height:1;margin-left:5px;flex:none;vertical-align:middle;}\n" +
+    "#" + id + " .rw-minig{width:18px;height:18px;border-radius:50%;background:conic-gradient(#4285F4 0deg 90deg,#34A853 90deg 180deg,#FBBC05 180deg 270deg,#EA4335 270deg 360deg);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:10px;flex:none;}\n" +
+    "#" + id + " .rw-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:16px;}\n" +
+
+    /* Compact bar */
+    "#" + id + ".rw-compact .rw-bar{display:inline-flex;align-items:center;gap:8px;background:var(--rw-bg);border:1px solid var(--rw-border);border-radius:10px;box-shadow:var(--rw-shadow);padding:8px 14px;font-size:13px;}\n" +
+    "#" + id + ".rw-compact .rw-sep{color:var(--rw-border);}\n" +
+    "#" + id + ".rw-compact .rw-score{font-weight:700;}\n" +
+    "#" + id + ".rw-compact .rw-count{color:var(--rw-text2);}\n" +
+
+    /* Header + carousel */
+    "#" + id + " .rw-headercard{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--rw-bg);border:1px solid var(--rw-border);border-radius:12px;box-shadow:var(--rw-shadow);padding:16px 18px;flex-wrap:wrap;}\n" +
+    "#" + id + " .rw-headercard-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}\n" +
+    "#" + id + " .rw-headercard-meta{display:flex;flex-direction:column;gap:4px;}\n" +
+    "#" + id + " .rw-ratingword{font-weight:600;font-size:14px;}\n" +
+    "#" + id + " .rw-scoreline{font-size:13px;color:var(--rw-text2);}\n" +
+    "#" + id + " .rw-writebtn{border:1.5px solid var(--rw-accent);color:var(--rw-accent);background:transparent;padding:9px 16px;border-radius:999px;font-weight:600;font-size:13px;text-decoration:none;white-space:nowrap;transition:background .15s ease,color .15s ease;}\n" +
+    "#" + id + " .rw-writebtn:hover{background:var(--rw-accent);color:#fff;}\n" +
+    "#" + id + " .rw-writebtn:focus-visible{outline:2px solid var(--rw-accent);outline-offset:2px;}\n" +
+
+    "#" + id + " .rw-summary-card{display:flex;gap:14px;align-items:flex-start;background:var(--rw-bg);border:1px solid var(--rw-border);border-radius:12px;box-shadow:var(--rw-shadow);padding:14px 16px;margin-top:12px;}\n" +
+    "#" + id + " .rw-summary-avatars{display:flex;flex:none;padding-top:2px;}\n" +
+    "#" + id + " .rw-summary-avatar{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid var(--rw-bg);margin-left:-10px;}\n" +
+    "#" + id + " .rw-summary-avatar:first-child{margin-left:0;}\n" +
+    "#" + id + " .rw-summary-title{font-weight:700;font-size:13.5px;margin-bottom:4px;}\n" +
+    "#" + id + " .rw-summary-text{margin:0;font-size:13px;line-height:1.5;color:var(--rw-text2);}\n" +
+
+    "#" + id + " .rw-carousel-wrap{display:flex;align-items:center;gap:8px;margin-top:14px;}\n" +
+    "#" + id + " .rw-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;flex:1;min-width:0;-webkit-overflow-scrolling:touch;}\n" +
+    "#" + id + " .rw-track:focus-visible{outline:2px solid var(--rw-accent);outline-offset:2px;}\n" +
+    "#" + id + " .rw-card{scroll-snap-align:start;flex:0 0 260px;background:var(--rw-bg);border:1px solid var(--rw-border);border-radius:12px;box-shadow:var(--rw-shadow);padding:14px;}\n" +
+    "#" + id + " .rw-card-top{display:flex;align-items:flex-start;gap:10px;}\n" +
+    "#" + id + " .rw-card-id{flex:1;min-width:0;}\n" +
+    "#" + id + " .rw-card-name{font-weight:700;font-size:13.5px;display:flex;align-items:center;}\n" +
+    "#" + id + " .rw-card-sub{display:flex;align-items:center;gap:8px;margin-top:3px;}\n" +
+    "#" + id + " .rw-date{font-size:12px;color:var(--rw-text2);}\n" +
+    "#" + id + " .rw-card-text{margin:10px 0 2px;font-size:13.5px;line-height:1.5;color:var(--rw-text);white-space:pre-line;}\n" +
+    "#" + id + " .rw-card-text.rw-clamped{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}\n" +
+    "#" + id + " .rw-readmore{display:inline-block;background:none;border:none;padding:0;margin-top:4px;color:var(--rw-accent);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}\n" +
+    "#" + id + " .rw-readmore:focus-visible{outline:2px solid var(--rw-accent);outline-offset:2px;}\n" +
+    "#" + id + " .rw-chev{flex:none;width:32px;height:32px;border-radius:50%;border:1px solid var(--rw-border);background:var(--rw-bg);color:var(--rw-text);font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}\n" +
+    "#" + id + " .rw-chev:hover{border-color:var(--rw-accent);color:var(--rw-accent);}\n" +
+    "#" + id + " .rw-chev:focus-visible{outline:2px solid var(--rw-accent);outline-offset:2px;}\n" +
+
+    /* Floating button + modal */
+    "#" + id + ".rw-pos-bottom-right .rw-fab{right:16px;bottom:16px;}\n" +
+    "#" + id + ".rw-pos-bottom-left .rw-fab{left:16px;bottom:16px;}\n" +
+    "#" + id + " .rw-fab{position:fixed;z-index:2147483000;display:inline-flex;align-items:center;gap:8px;background:var(--rw-bg);border:1px solid var(--rw-border);border-radius:999px;box-shadow:0 6px 20px rgba(24,39,75,.22);padding:10px 16px;cursor:pointer;font:inherit;color:var(--rw-text);}\n" +
+    "#" + id + " .rw-fab:focus-visible{outline:2px solid var(--rw-accent);outline-offset:2px;}\n" +
+    "#" + id + " .rw-fab .rw-score{font-weight:700;}\n" +
+    "#" + id + " .rw-modal-overlay{position:fixed;inset:0;background:rgba(15,20,28,.5);z-index:2147483001;}\n" +
+    "#" + id + " .rw-modal{position:fixed;z-index:2147483002;top:50%;left:50%;transform:translate(-50%,-50%);width:min(560px,92vw);max-height:85vh;overflow:auto;background:var(--rw-bg);border:1px solid var(--rw-border);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);padding:22px 20px 18px;}\n" +
+    "#" + id + " .rw-modal-close{position:absolute;top:8px;right:10px;background:none;border:none;font-size:24px;line-height:1;cursor:pointer;color:var(--rw-text2);padding:6px;}\n" +
+    "#" + id + " .rw-modal-close:hover{color:var(--rw-text);}\n" +
+    "#" + id + " .rw-modal-close:focus-visible{outline:2px solid var(--rw-accent);outline-offset:2px;}\n" +
+
+    /* Responsive */
+    "@media (max-width:640px){\n" +
+    "#" + id + " .rw-headercard{flex-direction:column;align-items:flex-start;}\n" +
+    "#" + id + " .rw-writebtn{align-self:stretch;text-align:center;}\n" +
+    "#" + id + " .rw-card{flex-basis:82%;}\n" +
+    "#" + id + " .rw-modal{width:92vw;padding-top:26px;}\n" +
+    "}\n" +
+    "@media (prefers-reduced-motion:reduce){\n" +
+    "#" + id + " .rw-track{scroll-behavior:auto;}\n" +
+    "}\n";
+  }
+
+  function widgetScript(cfg){
+    var id = cfg.id;
+    return "(function(){\n" +
+    '  var root = document.getElementById(' + JSON.stringify(id) + ");\n" +
+    "  if (!root) return;\n" +
+    "  var reduceMotion = false;\n" +
+    "  try { reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e){}\n" +
+    "\n" +
+    "  var wraps = root.querySelectorAll('.rw-card-text-wrap');\n" +
+    "  for (var i=0; i<wraps.length; i++){\n" +
+    "    (function(wrap){\n" +
+    "      var textEl = wrap.querySelector('.rw-card-text');\n" +
+    "      var btn = wrap.querySelector('.rw-readmore');\n" +
+    "      if (!textEl || !btn) return;\n" +
+    "      var check = function(){\n" +
+    "        var overflowing = textEl.scrollHeight > textEl.clientHeight + 1;\n" +
+    "        btn.hidden = !overflowing;\n" +
+    "      };\n" +
+    "      check();\n" +
+    "      window.addEventListener('resize', check);\n" +
+    "      btn.addEventListener('click', function(){\n" +
+    "        var more = btn.getAttribute('data-more');\n" +
+    "        var less = btn.getAttribute('data-less');\n" +
+    "        if (textEl.classList.contains('rw-clamped')) {\n" +
+    "          textEl.classList.remove('rw-clamped');\n" +
+    "          btn.textContent = less;\n" +
+    "        } else {\n" +
+    "          textEl.classList.add('rw-clamped');\n" +
+    "          btn.textContent = more;\n" +
+    "        }\n" +
+    "      });\n" +
+    "    })(wraps[i]);\n" +
+    "  }\n" +
+    "\n" +
+    "  var track = root.querySelector('.rw-track');\n" +
+    "  var chevLeft = root.querySelector('.rw-chev-left');\n" +
+    "  var chevRight = root.querySelector('.rw-chev-right');\n" +
+    "  function scrollAmount(){\n" +
+    "    var card = track ? track.querySelector('.rw-card') : null;\n" +
+    "    return card ? card.getBoundingClientRect().width + 12 : 260;\n" +
+    "  }\n" +
+    "  if (chevLeft && track) chevLeft.addEventListener('click', function(){ track.scrollBy({ left: -scrollAmount(), behavior: reduceMotion ? 'auto' : 'smooth' }); });\n" +
+    "  if (chevRight && track) chevRight.addEventListener('click', function(){ track.scrollBy({ left: scrollAmount(), behavior: reduceMotion ? 'auto' : 'smooth' }); });\n" +
+    "\n" +
+    "  var fab = root.querySelector('.rw-fab');\n" +
+    "  var overlay = root.querySelector('.rw-modal-overlay');\n" +
+    "  var modal = root.querySelector('.rw-modal');\n" +
+    "  var closeBtn = root.querySelector('.rw-modal-close');\n" +
+    "  var lastFocused = null;\n" +
+    "  function getFocusable(){\n" +
+    "    if (!modal) return [];\n" +
+    "    var nodes = modal.querySelectorAll('button, a[href], [tabindex]');\n" +
+    "    var out = [];\n" +
+    "    for (var j=0;j<nodes.length;j++){ if (!nodes[j].hidden) out.push(nodes[j]); }\n" +
+    "    return out;\n" +
+    "  }\n" +
+    "  function onKeydown(e){\n" +
+    "    if (e.key === 'Escape') { closeModal(); return; }\n" +
+    "    if (e.key === 'Tab') {\n" +
+    "      var f = getFocusable();\n" +
+    "      if (!f.length) return;\n" +
+    "      var first = f[0], last = f[f.length-1];\n" +
+    "      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }\n" +
+    "      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }\n" +
+    "    }\n" +
+    "  }\n" +
+    "  function openModal(){\n" +
+    "    if (!modal || !overlay || !fab) return;\n" +
+    "    lastFocused = document.activeElement;\n" +
+    "    overlay.hidden = false;\n" +
+    "    modal.hidden = false;\n" +
+    "    fab.setAttribute('aria-expanded', 'true');\n" +
+    "    document.addEventListener('keydown', onKeydown, true);\n" +
+    "    document.body.style.overflow = 'hidden';\n" +
+    "    if (closeBtn) closeBtn.focus();\n" +
+    "  }\n" +
+    "  function closeModal(){\n" +
+    "    if (!modal || !overlay || !fab) return;\n" +
+    "    overlay.hidden = true;\n" +
+    "    modal.hidden = true;\n" +
+    "    fab.setAttribute('aria-expanded', 'false');\n" +
+    "    document.removeEventListener('keydown', onKeydown, true);\n" +
+    "    document.body.style.overflow = '';\n" +
+    "    if (lastFocused && lastFocused.focus) lastFocused.focus();\n" +
+    "  }\n" +
+    "  if (fab) fab.addEventListener('click', function(){ (modal && modal.hidden) ? openModal() : closeModal(); });\n" +
+    "  if (closeBtn) closeBtn.addEventListener('click', closeModal);\n" +
+    "  if (overlay) overlay.addEventListener('click', closeModal);\n" +
+    "})();";
+  }
+
+  function generateWidgetHTML(cfg){
+    var id = cfg.id;
+    var rootClasses = ["rw-root"];
+    if (cfg.variant === "compact") rootClasses.push("rw-compact");
+    if (cfg.variant === "floating") rootClasses.push("rw-pos-" + cfg.floatingPosition);
+    var rootClass = rootClasses.join(" ");
+
+    var body;
+    if (cfg.variant === "compact") {
+      var scoreTxt = parseFloat(cfg.score || 0).toFixed(1);
+      body = '<div class="rw-bar">' +
+        (cfg.showBrand ? renderWordmark(cfg.brandLabel) : "") +
+        renderStars(cfg.score, true) +
+        '<span class="rw-score">' + escapeHtml(scoreTxt) + "</span>" +
+        '<span class="rw-sep">|</span>' +
+        '<span class="rw-count">' + escapeHtml(cfg.reviewCount || 0) + " " + escapeHtml(cfg.reviewsWord || "") + "</span>" +
+      "</div>";
+    } else if (cfg.variant === "header") {
+      body = renderHeaderBody(cfg);
+    } else {
+      var scoreTxt2 = parseFloat(cfg.score || 0).toFixed(1);
+      body = '<button type="button" class="rw-fab" aria-haspopup="dialog" aria-expanded="false" aria-controls="' + id + '-modal">' +
+          (cfg.showBrand ? renderWordmark(cfg.brandLabel) : renderMiniG()) +
+          renderStars(cfg.score, true) +
+          '<span class="rw-score">' + escapeHtml(scoreTxt2) + "</span>" +
+        "</button>" +
+        '<div class="rw-modal-overlay" hidden></div>' +
+        '<div class="rw-modal" id="' + id + '-modal" role="dialog" aria-modal="true" aria-label="Reseñas de ' + escapeHtml(cfg.brandLabel || "clientes") + '" hidden>' +
+          '<button type="button" class="rw-modal-close" aria-label="Cerrar">×</button>' +
+          renderHeaderBody(cfg) +
+        "</div>";
+    }
+
+    var html = "";
+    html += "<!-- Aviso: el uso de nombres/marcas de terceros (p. ej. \"Google\") es responsabilidad de quien publica este widget. Usa únicamente reseñas genuinas y reales. -->\n";
+    html += "<style>\n" + widgetCss(cfg) + "</style>\n";
+    html += '<div id="' + id + '" class="' + rootClass + '">' + body + "</div>\n";
+    html += "<script>\n" + widgetScript(cfg) + "\n<\/script>";
+    return html;
+  }
+
+  function wrapAsDocument(fragment, cfg){
+    return "<!doctype html>\n<html lang=\"es\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>" + escapeHtml(cfg.brandLabel || "Reseñas") + " - Reseñas</title>\n</head>\n<body>\n" + fragment + "\n</body>\n</html>";
+  }
+
+  /* ---------------------------------------------------------------
+   * Panel: referencias y binding
+   * ------------------------------------------------------------- */
+  var els = {};
+  ["floatingPosition","theme","accent","showBrand","brandLabel","showAvatars",
+   "readMoreText","readLessText","score","reviewCount","reviewsWord","ratingWord",
+   "writeReviewText","writeReviewUrl","summaryEnabled","summaryAvatar1","summaryAvatar2",
+   "summaryAvatar3","summaryText","configName","previewBg"].forEach(function(id){
+    els[id] = document.getElementById(id);
+  });
+  var reviewsContainer = document.getElementById("reviewsContainer");
+  var savedConfigsList = document.getElementById("savedConfigsList");
+  var previewFrame = document.getElementById("previewFrame");
+  var codeOutput = document.getElementById("codeOutput");
+  var floatingPositionField = document.getElementById("floatingPositionField");
+
+  var updateTimer = null;
+  function scheduleUpdate(){
+    clearTimeout(updateTimer);
+    updateTimer = setTimeout(update, 120);
+  }
+
+  function bindSimple(id, path, kind){
+    var el = els[id];
+    if (!el) return;
+    var evt = (kind === "checkbox" || el.tagName === "SELECT") ? "change" : "input";
+    el.addEventListener(evt, function(){
+      var val = kind === "checkbox" ? el.checked : el.value;
+      setPath(state, path, val);
+      if (id === "variant" || id === "variant-radio") toggleFloatingField();
+      scheduleUpdate();
+    });
+  }
+
+  bindSimple("theme", "theme");
+  bindSimple("accent", "accent");
+  bindSimple("showBrand", "showBrand", "checkbox");
+  bindSimple("brandLabel", "brandLabel");
+  bindSimple("showAvatars", "showAvatars", "checkbox");
+  bindSimple("readMoreText", "readMoreText");
+  bindSimple("readLessText", "readLessText");
+  bindSimple("score", "score");
+  bindSimple("reviewCount", "reviewCount");
+  bindSimple("reviewsWord", "reviewsWord");
+  bindSimple("ratingWord", "ratingWord");
+  bindSimple("writeReviewText", "writeReviewText");
+  bindSimple("writeReviewUrl", "writeReviewUrl");
+  bindSimple("floatingPosition", "floatingPosition");
+  bindSimple("summaryEnabled", "summary.enabled", "checkbox");
+  bindSimple("summaryAvatar1", "summary.avatars.0");
+  bindSimple("summaryAvatar2", "summary.avatars.1");
+  bindSimple("summaryAvatar3", "summary.avatars.2");
+  bindSimple("summaryText", "summary.text");
+
+  // setPath no soporta índices de array con notación "a.b.0"; manejamos avatares aparte.
+  ["summaryAvatar1","summaryAvatar2","summaryAvatar3"].forEach(function(fid, idx){
+    var el = els[fid];
+    if (!el) return;
+    el.addEventListener("input", function(){
+      state.summary.avatars[idx] = el.value;
+      scheduleUpdate();
+    });
+  });
+
+  document.querySelectorAll('input[name="variant"]').forEach(function(radio){
+    radio.addEventListener("change", function(){
+      if (radio.checked) {
+        state.variant = radio.value;
+        toggleFloatingField();
+        scheduleUpdate();
+      }
+    });
+  });
+
+  function toggleFloatingField(){
+    floatingPositionField.style.display = (state.variant === "floating") ? "" : "none";
+  }
+
+  document.getElementById("ratingWordAuto").addEventListener("click", function(){
+    state.ratingWord = deriveRatingWord(state.score);
+    els.ratingWord.value = state.ratingWord;
+    scheduleUpdate();
+  });
+
+  document.getElementById("previewBg").addEventListener("change", function(){
+    updatePreviewOnly();
+  });
+
+  /* ---------------------------------------------------------------
+   * Reseñas: lista dinámica
+   * ------------------------------------------------------------- */
+  function renderReviewsPanel(){
+    reviewsContainer.innerHTML = state.reviews.map(function(r, idx){
+      return '<div class="review-item" data-index="' + idx + '">' +
+        '<div class="review-item-head">' +
+          '<span class="name">Reseña ' + (idx+1) + "</span>" +
+          '<div class="review-item-actions">' +
+            '<button type="button" class="btn-ghost" data-action="up" title="Subir">↑</button>' +
+            '<button type="button" class="btn-ghost" data-action="down" title="Bajar">↓</button>' +
+            '<button type="button" class="btn-danger" data-action="remove" title="Eliminar">✕</button>' +
+          "</div>" +
+        "</div>" +
+        '<div class="field"><label>Nombre</label><input type="text" data-field="name" value="' + escapeHtml(r.name) + '"></div>' +
+        '<div class="row">' +
+          '<div class="field"><label>Avatar URL</label><input type="url" data-field="avatarUrl" value="' + escapeHtml(r.avatarUrl) + '"></div>' +
+          '<div class="field" style="flex:0 0 54px;"><label>Inicial</label><input type="text" maxlength="2" data-field="avatarInitial" value="' + escapeHtml(r.avatarInitial) + '"></div>' +
+          '<div class="field" style="flex:0 0 44px;"><label>Color</label><input type="color" data-field="avatarColor" value="' + (isValidColor(r.avatarColor) ? r.avatarColor : "#4285F4") + '"></div>' +
+        "</div>" +
+        '<div class="row">' +
+          '<div class="field"><label>Puntuación (1-5)</label><input type="number" min="1" max="5" step="0.5" data-field="score" value="' + escapeHtml(r.score) + '"></div>' +
+          '<div class="field"><label>Fecha (texto libre)</label><input type="text" data-field="date" value="' + escapeHtml(r.date) + '"></div>' +
+        "</div>" +
+        '<div class="field"><label>Texto de la reseña</label><textarea data-field="text">' + escapeHtml(r.text) + "</textarea></div>" +
+        '<div class="check-field"><input type="checkbox" data-field="verified" ' + (r.verified ? "checked" : "") + "><label>Verificada</label></div>" +
+      "</div>";
+    }).join("") || '<div class="empty-note">No hay reseñas. Añade la primera.</div>';
+  }
+
+  reviewsContainer.addEventListener("input", function(e){
+    var t = e.target;
+    var field = t.dataset.field;
+    if (!field) return;
+    var item = t.closest("[data-index]");
+    if (!item) return;
+    var idx = parseInt(item.dataset.index, 10);
+    var val = t.type === "checkbox" ? t.checked : t.value;
+    if (field === "score") val = clampNum(val, 1, 5);
+    state.reviews[idx][field] = val;
+    scheduleUpdate();
+  });
+  reviewsContainer.addEventListener("change", function(e){
+    if (e.target.type === "checkbox") {
+      var item = e.target.closest("[data-index]");
+      if (!item) return;
+      var idx = parseInt(item.dataset.index, 10);
+      state.reviews[idx][e.target.dataset.field] = e.target.checked;
+      scheduleUpdate();
+    }
+  });
+  reviewsContainer.addEventListener("click", function(e){
+    var btn = e.target.closest("[data-action]");
+    if (!btn) return;
+    var item = btn.closest("[data-index]");
+    if (!item) return;
+    var idx = parseInt(item.dataset.index, 10);
+    var action = btn.dataset.action;
+    if (action === "remove") {
+      state.reviews.splice(idx, 1);
+    } else if (action === "up" && idx > 0) {
+      var tmp = state.reviews[idx-1];
+      state.reviews[idx-1] = state.reviews[idx];
+      state.reviews[idx] = tmp;
+    } else if (action === "down" && idx < state.reviews.length - 1) {
+      var tmp2 = state.reviews[idx+1];
+      state.reviews[idx+1] = state.reviews[idx];
+      state.reviews[idx] = tmp2;
+    }
+    renderReviewsPanel();
+    scheduleUpdate();
+  });
+
+  document.getElementById("addReview").addEventListener("click", function(){
+    state.reviews.push({ id: uid(), name: "", avatarUrl: "", avatarInitial: "", avatarColor: "#4285F4", score: 5, date: "", text: "", verified: false });
+    renderReviewsPanel();
+    scheduleUpdate();
+  });
+
+  /* ---------------------------------------------------------------
+   * Configuraciones guardadas (localStorage)
+   * ------------------------------------------------------------- */
+  var STORAGE_KEY = "reviewWidgetForgeConfigs";
+  function loadSavedConfigs(){
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch(e){ return {}; }
+  }
+  function persistSavedConfigs(map){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(map)); } catch(e){}
+  }
+  function renderSavedPanel(){
+    var map = loadSavedConfigs();
+    var names = Object.keys(map);
+    if (!names.length) {
+      savedConfigsList.innerHTML = '<div class="empty-note">Aún no hay configuraciones guardadas.</div>';
+      return;
+    }
+    savedConfigsList.innerHTML = names.map(function(name){
+      return '<div class="saved-item"><span class="name">' + escapeHtml(name) + '</span><div class="btn-row">' +
+        '<button type="button" class="btn-ghost btn-sm" data-load="' + escapeHtml(name) + '">Cargar</button>' +
+        '<button type="button" class="btn-danger btn-sm" data-del="' + escapeHtml(name) + '">Eliminar</button>' +
+      "</div></div>";
+    }).join("");
+  }
+  savedConfigsList.addEventListener("click", function(e){
+    var loadBtn = e.target.closest("[data-load]");
+    var delBtn = e.target.closest("[data-del]");
+    var map = loadSavedConfigs();
+    if (loadBtn) {
+      var name = loadBtn.getAttribute("data-load");
+      if (map[name]) {
+        state = map[name];
+        syncPanelFromState();
+        toast('Configuración "' + name + '" cargada');
+      }
+    } else if (delBtn) {
+      var name2 = delBtn.getAttribute("data-del");
+      delete map[name2];
+      persistSavedConfigs(map);
+      renderSavedPanel();
+      toast('Configuración "' + name2 + '" eliminada');
+    }
+  });
+  document.getElementById("saveConfig").addEventListener("click", function(){
+    var name = (els.configName.value || "").trim();
+    if (!name) { toast("Escribe un nombre para guardar"); return; }
+    var map = loadSavedConfigs();
+    map[name] = JSON.parse(JSON.stringify(state));
+    persistSavedConfigs(map);
+    renderSavedPanel();
+    toast('Configuración "' + name + '" guardada');
+  });
+
+  document.getElementById("resetConfig").addEventListener("click", function(){
+    state = defaultState();
+    syncPanelFromState();
+    toast("Configuración reiniciada");
+  });
+
+  /* ---------------------------------------------------------------
+   * Sincronizar panel <- estado (para carga/reset)
+   * ------------------------------------------------------------- */
+  function syncPanelFromState(){
+    document.querySelectorAll('input[name="variant"]').forEach(function(r){ r.checked = (r.value === state.variant); });
+    els.theme.value = state.theme;
+    els.accent.value = isValidColor(state.accent) ? state.accent : "#4285F4";
+    els.showBrand.checked = !!state.showBrand;
+    els.brandLabel.value = state.brandLabel;
+    els.showAvatars.checked = !!state.showAvatars;
+    els.readMoreText.value = state.readMoreText;
+    els.readLessText.value = state.readLessText;
+    els.score.value = state.score;
+    els.reviewCount.value = state.reviewCount;
+    els.reviewsWord.value = state.reviewsWord;
+    els.ratingWord.value = state.ratingWord;
+    els.writeReviewText.value = state.writeReviewText;
+    els.writeReviewUrl.value = state.writeReviewUrl;
+    els.floatingPosition.value = state.floatingPosition;
+    els.summaryEnabled.checked = !!state.summary.enabled;
+    els.summaryAvatar1.value = state.summary.avatars[0] || "";
+    els.summaryAvatar2.value = state.summary.avatars[1] || "";
+    els.summaryAvatar3.value = state.summary.avatars[2] || "";
+    els.summaryText.value = state.summary.text;
+    toggleFloatingField();
+    renderReviewsPanel();
+    update();
+  }
+
+  /* ---------------------------------------------------------------
+   * Vista previa + código
+   * ------------------------------------------------------------- */
+  function wrapForPreview(fragment){
+    var bgMode = els.previewBg.value;
+    var bg = bgMode === "dark" ? "#111418" : "#f4f6f9";
+    return "<!doctype html><html><head><meta charset=\"utf-8\">" +
+      "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">" +
+      "<style>html,body{margin:0;padding:0;background:" + bg + ";} body{padding:28px;min-height:100vh;box-sizing:border-box;}</style>" +
+      "</head><body>" + fragment +
+      "<script>(function(){function send(){try{parent.postMessage({rwForgeHeight:document.documentElement.scrollHeight},'*');}catch(e){}}" +
+      "if(window.ResizeObserver){new ResizeObserver(send).observe(document.body);}" +
+      "window.addEventListener('load',send);setTimeout(send,50);setTimeout(send,300);})();<\/script>" +
+      "</body></html>";
+  }
+
+  window.addEventListener("message", function(e){
+    if (e.source === previewFrame.contentWindow && e.data && typeof e.data.rwForgeHeight === "number") {
+      previewFrame.style.height = Math.max(120, e.data.rwForgeHeight + 4) + "px";
+    }
+  });
+
+  function updatePreviewOnly(){
+    var fragment = generateWidgetHTML(state);
+    previewFrame.srcdoc = wrapForPreview(fragment);
+  }
+
+  function update(){
+    var fragment = generateWidgetHTML(state);
+    codeOutput.value = fragment;
+    previewFrame.srcdoc = wrapForPreview(fragment);
+  }
+
+  document.getElementById("regenId").addEventListener("click", function(){
+    state.id = makeId();
+    update();
+    toast("Nuevo ID generado: " + state.id);
+  });
+
+  document.getElementById("copyCode").addEventListener("click", function(){
+    var text = codeOutput.value;
+    function done(){ toast("Código copiado al portapapeles"); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function(){
+        codeOutput.select();
+        document.execCommand("copy");
+        done();
+      });
+    } else {
+      codeOutput.select();
+      document.execCommand("copy");
+      done();
+    }
+  });
+
+  document.getElementById("downloadCode").addEventListener("click", function(){
+    var fragment = generateWidgetHTML(state);
+    var doc = wrapAsDocument(fragment, state);
+    var blob = new Blob([doc], { type: "text/html" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = (state.brandLabel || "review-widget").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") + "-widget.html";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+    toast("Archivo .html descargado");
+  });
+
+  /* ---------------------------------------------------------------
+   * Inicio
+   * ------------------------------------------------------------- */
+  syncPanelFromState();
+  renderSavedPanel();
+})();
+</script>
+</body>
+</html>
