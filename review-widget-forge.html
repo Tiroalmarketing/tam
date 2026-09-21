@@ -376,6 +376,47 @@
       </div>
     </details>
 
+    <!-- SEO / SCHEMA.ORG -->
+    <details class="section">
+      <summary>SEO (schema.org)</summary>
+      <div class="section-body">
+        <div class="check-field">
+          <input type="checkbox" id="schemaEnabled">
+          <label for="schemaEnabled">Incluir datos estructurados (JSON-LD)</label>
+        </div>
+        <div class="field">
+          <label for="schemaType">Tipo de negocio (schema.org)</label>
+          <select id="schemaType">
+            <option value="LocalBusiness">LocalBusiness (genérico)</option>
+            <option value="ProfessionalService">ProfessionalService</option>
+            <option value="Store">Store</option>
+            <option value="Restaurant">Restaurant</option>
+            <option value="Hotel">Hotel</option>
+            <option value="AutoRepair">AutoRepair</option>
+            <option value="Dentist">Dentist</option>
+            <option value="RealEstateAgent">RealEstateAgent</option>
+            <option value="Organization">Organization</option>
+            <option value="Product">Product</option>
+            <option value="Service">Service</option>
+            <option value="custom">Personalizado…</option>
+          </select>
+        </div>
+        <div class="field" id="schemaTypeCustomField" style="display:none;">
+          <label for="schemaTypeCustom">Tipo personalizado (schema.org)</label>
+          <input type="text" id="schemaTypeCustom" placeholder="p. ej. BeautySalon, Dentist...">
+        </div>
+        <div class="field">
+          <label for="schemaName">Nombre del negocio/marca</label>
+          <input type="text" id="schemaName" placeholder="Nombre para el schema">
+        </div>
+        <div class="field">
+          <label for="schemaUrl">URL del negocio (opcional)</label>
+          <input type="url" id="schemaUrl" placeholder="https://tu-sitio.com">
+        </div>
+        <div class="hint">Genera un bloque JSON-LD (AggregateRating + Review) para optar a fragmentos enriquecidos en Google. Revisa las directrices de reseñas de Google para tu tipo de negocio antes de publicarlo.</div>
+      </div>
+    </details>
+
     <!-- RESUMEN -->
     <details class="section">
       <summary>Resumen (tarjeta IA)</summary>
@@ -544,21 +585,35 @@
       writeReviewText: "Escribir una reseña",
       writeReviewUrl: "https://g.page/r/ejemplo/review",
       floatingPosition: "bottom-right",
+      schema: {
+        enabled: true,
+        type: "LocalBusiness",
+        typeCustom: "",
+        name: "Mi Negocio",
+        url: ""
+      },
       summary: {
         enabled: true,
         avatars: ["", "", ""],
         text: "Los clientes destacan la atención personalizada, la rapidez del servicio y una muy buena relación calidad-precio."
       },
       reviews: [
-        { id: uid(), name: "Marta G.", avatarUrl: "", avatarInitial: "M", avatarColor: "#4285F4", score: 5, date: "hace 2 semanas", text: "Un servicio excelente de principio a fin. El equipo fue muy atento y resolvió todas mis dudas rápidamente. Sin duda volveré a confiar en ellos y los recomiendo a cualquiera que busque un trato profesional y cercano.", verified: true },
-        { id: uid(), name: "Javier R.", avatarUrl: "", avatarInitial: "J", avatarColor: "#EA4335", score: 5, date: "hace 1 mes", text: "Muy contento con el resultado final. La comunicación fue clara durante todo el proceso.", verified: true },
-        { id: uid(), name: "Laura P.", avatarUrl: "", avatarInitial: "L", avatarColor: "#34A853", score: 4, date: "hace 1 mes", text: "Buena atención en general, aunque el tiempo de espera fue un poco más largo de lo esperado. Aun así el resultado mereció la pena.", verified: false },
-        { id: uid(), name: "Carlos M.", avatarUrl: "", avatarInitial: "C", avatarColor: "#FBBC05", score: 5, date: "hace 2 meses", text: "Superó mis expectativas. Un equipo muy profesional, atento a cada detalle y con una comunicación impecable en todo momento.", verified: true },
-        { id: uid(), name: "Sofía T.", avatarUrl: "", avatarInitial: "S", avatarColor: "#4285F4", score: 5, date: "hace 3 meses", text: "Totalmente recomendable. Rápidos, eficaces y con muy buen trato.", verified: true }
+        { id: uid(), name: "Marta G.", avatarUrl: "", avatarInitial: "M", avatarColor: "#4285F4", score: 5, date: "hace 2 semanas", dateISO: "2025-09-01", text: "Un servicio excelente de principio a fin. El equipo fue muy atento y resolvió todas mis dudas rápidamente. Sin duda volveré a confiar en ellos y los recomiendo a cualquiera que busque un trato profesional y cercano.", verified: true },
+        { id: uid(), name: "Javier R.", avatarUrl: "", avatarInitial: "J", avatarColor: "#EA4335", score: 5, date: "hace 1 mes", dateISO: "2025-08-20", text: "Muy contento con el resultado final. La comunicación fue clara durante todo el proceso.", verified: true },
+        { id: uid(), name: "Laura P.", avatarUrl: "", avatarInitial: "L", avatarColor: "#34A853", score: 4, date: "hace 1 mes", dateISO: "2025-08-18", text: "Buena atención en general, aunque el tiempo de espera fue un poco más largo de lo esperado. Aun así el resultado mereció la pena.", verified: false },
+        { id: uid(), name: "Carlos M.", avatarUrl: "", avatarInitial: "C", avatarColor: "#FBBC05", score: 5, date: "hace 2 meses", dateISO: "2025-07-25", text: "Superó mis expectativas. Un equipo muy profesional, atento a cada detalle y con una comunicación impecable en todo momento.", verified: true },
+        { id: uid(), name: "Sofía T.", avatarUrl: "", avatarInitial: "S", avatarColor: "#4285F4", score: 5, date: "hace 3 meses", dateISO: "2025-06-30", text: "Totalmente recomendable. Rápidos, eficaces y con muy buen trato.", verified: true }
       ]
     };
   }
   var state = defaultState();
+  function normalizeState(s){
+    if (!s.schema) {
+      s.schema = { enabled: true, type: "LocalBusiness", typeCustom: "", name: s.brandLabel || "Mi Negocio", url: "" };
+    }
+    (s.reviews || []).forEach(function(r){ if (r.dateISO === undefined) r.dateISO = ""; });
+    return s;
+  }
 
   /* ---------------------------------------------------------------
    * Generación del widget embebible (marcado + CSS + JS aislados)
@@ -671,7 +726,7 @@
     var accent = isValidColor(cfg.accent) ? cfg.accent : "#4285F4";
 
     return "" +
-    "#" + id + "{--rw-bg:" + bg + ";--rw-border:" + border + ";--rw-text:" + text + ";--rw-text2:" + text2 + ";--rw-shadow:" + shadow + ";--rw-accent:" + accent + ";font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--rw-text);}\n" +
+    "#" + id + "{--rw-bg:" + bg + ";--rw-border:" + border + ";--rw-text:" + text + ";--rw-text2:" + text2 + ";--rw-shadow:" + shadow + ";--rw-accent:" + accent + ";font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--rw-text);max-width:100%;}\n" +
     "#" + id + " *,#" + id + " *::before,#" + id + " *::after{box-sizing:border-box;}\n" +
     "#" + id + " [hidden]{display:none !important;}\n" +
     "#" + id + " .rw-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}\n" +
@@ -685,7 +740,7 @@
     "#" + id + " .rw-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:16px;}\n" +
 
     /* Compact bar */
-    "#" + id + ".rw-compact .rw-bar{display:inline-flex;align-items:center;gap:8px;background:var(--rw-bg);border:1px solid var(--rw-border);border-radius:10px;box-shadow:var(--rw-shadow);padding:8px 14px;font-size:13px;}\n" +
+    "#" + id + ".rw-compact .rw-bar{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;max-width:100%;background:var(--rw-bg);border:1px solid var(--rw-border);border-radius:10px;box-shadow:var(--rw-shadow);padding:8px 14px;font-size:13px;}\n" +
     "#" + id + ".rw-compact .rw-sep{color:var(--rw-border);}\n" +
     "#" + id + ".rw-compact .rw-score{font-weight:700;}\n" +
     "#" + id + ".rw-compact .rw-count{color:var(--rw-text2);}\n" +
@@ -739,9 +794,21 @@
     /* Responsive */
     "@media (max-width:640px){\n" +
     "#" + id + " .rw-headercard{flex-direction:column;align-items:flex-start;}\n" +
+    "#" + id + " .rw-headercard-left{width:100%;}\n" +
     "#" + id + " .rw-writebtn{align-self:stretch;text-align:center;}\n" +
     "#" + id + " .rw-card{flex-basis:82%;}\n" +
     "#" + id + " .rw-modal{width:92vw;padding-top:26px;}\n" +
+    "#" + id + " .rw-summary-card{flex-direction:column;}\n" +
+    "#" + id + " .rw-summary-avatars{padding-top:0;margin-bottom:4px;}\n" +
+    "}\n" +
+    "@media (max-width:420px){\n" +
+    "#" + id + " .rw-headercard{padding:14px;}\n" +
+    "#" + id + " .rw-word{font-size:17px;}\n" +
+    "#" + id + " .rw-fab{padding:8px 12px;font-size:12.5px;}\n" +
+    "#" + id + ".rw-pos-bottom-right .rw-fab{right:10px;bottom:10px;}\n" +
+    "#" + id + ".rw-pos-bottom-left .rw-fab{left:10px;bottom:10px;}\n" +
+    "#" + id + " .rw-modal{padding:22px 12px 14px;}\n" +
+    "#" + id + " .rw-card{flex-basis:88%;padding:12px;}\n" +
     "}\n" +
     "@media (prefers-reduced-motion:reduce){\n" +
     "#" + id + " .rw-track{scroll-behavior:auto;}\n" +
@@ -839,6 +906,46 @@
     "})();";
   }
 
+  function effectiveSchemaType(cfg){
+    var t = cfg.schema.type === "custom" ? (cfg.schema.typeCustom || "").trim() : cfg.schema.type;
+    return t || "LocalBusiness";
+  }
+  function renderSchemaJsonLd(cfg){
+    if (!cfg.schema || !cfg.schema.enabled) return "";
+    var reviews = cfg.reviews.filter(function(r){ return (r.name || r.text); }).map(function(r){
+      var reviewObj = {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": r.name || "Cliente" },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": String(clampNum(r.score, 1, 5)),
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "reviewBody": r.text || ""
+      };
+      if (r.dateISO) reviewObj.datePublished = r.dateISO;
+      return reviewObj;
+    });
+    var data = {
+      "@context": "https://schema.org",
+      "@type": effectiveSchemaType(cfg),
+      "name": cfg.schema.name || cfg.brandLabel || "Negocio",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": parseFloat(cfg.score || 0).toFixed(1),
+        "reviewCount": String(parseInt(cfg.reviewCount, 10) || reviews.length || 1),
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": reviews
+    };
+    var url = sanitizeUrl(cfg.schema.url);
+    if (url) data.url = url;
+    var json = JSON.stringify(data, null, 2).replace(/</g, "\\u003c");
+    return '<script type="application/ld+json">\n' + json + "\n<\/script>";
+  }
+
   function generateWidgetHTML(cfg){
     var id = cfg.id;
     var rootClasses = ["rw-root"];
@@ -877,6 +984,8 @@
     html += "<style>\n" + widgetCss(cfg) + "</style>\n";
     html += '<div id="' + id + '" class="' + rootClass + '">' + body + "</div>\n";
     html += "<script>\n" + widgetScript(cfg) + "\n<\/script>";
+    var schemaBlock = renderSchemaJsonLd(cfg);
+    if (schemaBlock) html += "\n" + schemaBlock;
     return html;
   }
 
@@ -891,7 +1000,8 @@
   ["floatingPosition","theme","accent","showBrand","brandLabel","showAvatars",
    "readMoreText","readLessText","score","reviewCount","reviewsWord","ratingWord",
    "writeReviewText","writeReviewUrl","summaryEnabled","summaryAvatar1","summaryAvatar2",
-   "summaryAvatar3","summaryText","configName","previewBg"].forEach(function(id){
+   "summaryAvatar3","summaryText","configName","previewBg",
+   "schemaEnabled","schemaType","schemaTypeCustom","schemaName","schemaUrl"].forEach(function(id){
     els[id] = document.getElementById(id);
   });
   var reviewsContainer = document.getElementById("reviewsContainer");
@@ -937,6 +1047,16 @@
   bindSimple("summaryAvatar2", "summary.avatars.1");
   bindSimple("summaryAvatar3", "summary.avatars.2");
   bindSimple("summaryText", "summary.text");
+  bindSimple("schemaEnabled", "schema.enabled", "checkbox");
+  bindSimple("schemaType", "schema.type");
+  bindSimple("schemaTypeCustom", "schema.typeCustom");
+  bindSimple("schemaName", "schema.name");
+  bindSimple("schemaUrl", "schema.url");
+
+  function toggleSchemaTypeCustom(){
+    document.getElementById("schemaTypeCustomField").style.display = (state.schema.type === "custom") ? "" : "none";
+  }
+  els.schemaType.addEventListener("change", toggleSchemaTypeCustom);
 
   // setPath no soporta índices de array con notación "a.b.0"; manejamos avatares aparte.
   ["summaryAvatar1","summaryAvatar2","summaryAvatar3"].forEach(function(fid, idx){
@@ -996,6 +1116,7 @@
           '<div class="field"><label>Puntuación (1-5)</label><input type="number" min="1" max="5" step="0.5" data-field="score" value="' + escapeHtml(r.score) + '"></div>' +
           '<div class="field"><label>Fecha (texto libre)</label><input type="text" data-field="date" value="' + escapeHtml(r.date) + '"></div>' +
         "</div>" +
+        '<div class="field"><label>Fecha ISO para schema.org (opcional)</label><input type="date" data-field="dateISO" value="' + escapeHtml(r.dateISO || "") + '"></div>' +
         '<div class="field"><label>Texto de la reseña</label><textarea data-field="text">' + escapeHtml(r.text) + "</textarea></div>" +
         '<div class="check-field"><input type="checkbox" data-field="verified" ' + (r.verified ? "checked" : "") + "><label>Verificada</label></div>" +
       "</div>";
@@ -1046,7 +1167,7 @@
   });
 
   document.getElementById("addReview").addEventListener("click", function(){
-    state.reviews.push({ id: uid(), name: "", avatarUrl: "", avatarInitial: "", avatarColor: "#4285F4", score: 5, date: "", text: "", verified: false });
+    state.reviews.push({ id: uid(), name: "", avatarUrl: "", avatarInitial: "", avatarColor: "#4285F4", score: 5, date: "", dateISO: "", text: "", verified: false });
     renderReviewsPanel();
     scheduleUpdate();
   });
@@ -1085,7 +1206,7 @@
     if (loadBtn) {
       var name = loadBtn.getAttribute("data-load");
       if (map[name]) {
-        state = map[name];
+        state = normalizeState(map[name]);
         syncPanelFromState();
         toast('Configuración "' + name + '" cargada');
       }
@@ -1137,6 +1258,12 @@
     els.summaryAvatar2.value = state.summary.avatars[1] || "";
     els.summaryAvatar3.value = state.summary.avatars[2] || "";
     els.summaryText.value = state.summary.text;
+    els.schemaEnabled.checked = !!state.schema.enabled;
+    els.schemaType.value = state.schema.type;
+    els.schemaTypeCustom.value = state.schema.typeCustom;
+    els.schemaName.value = state.schema.name;
+    els.schemaUrl.value = state.schema.url;
+    toggleSchemaTypeCustom();
     toggleFloatingField();
     renderReviewsPanel();
     update();
