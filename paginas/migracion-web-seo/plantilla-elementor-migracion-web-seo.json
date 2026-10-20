@@ -1,0 +1,1677 @@
+{
+ "version": "0.4",
+ "title": "Migración web SEO – Tiro al Marketing",
+ "type": "page",
+ "page_settings": [],
+ "content": [
+  {
+   "id": "25e4e68",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "24",
+     "row": "24",
+     "isLinked": true,
+     "unit": "px",
+     "size": 24
+    },
+    "padding": {
+     "unit": "px",
+     "top": "64",
+     "right": "20",
+     "bottom": "72",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "32",
+     "right": "16",
+     "bottom": "48",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#0D0D14",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-dark tmw-hero"
+   },
+   "elements": [
+    {
+     "id": "c6348ff",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<style>\n/* ═══ Migración web SEO · estilos de página (prefijo .tmw) ═══ */\n.tmw{--tmw-dark:#0D0D14;--tmw-dark2:#12121E;--tmw-card:#1A1A28;--tmw-light:#F7F7FA;--tmw-red:#E63946;--tmw-red-btn:#C0303C;--tmw-red-hover:#A82835;--tmw-red-light:#FF6B7A;--tmw-green:#22C55E;--tmw-green-light:#4ADE80;--tmw-text:#1A1A28;--tmw-gray:#444466;--tmw-muted:#8888A0;--tmw-soft:#C8C8D8;--tmw-line:rgba(255,255,255,.08);--tmw-line-light:rgba(0,0,0,.1)}\n.tmw *,.tmw *::before,.tmw *::after{box-sizing:border-box}\n.tmw-hero{background:radial-gradient(circle at 92% 0%,rgba(230,57,70,.16) 0%,rgba(230,57,70,0) 42%),#0D0D14!important}\n.tmw-contact{background:radial-gradient(circle at 0% 100%,rgba(230,57,70,.12) 0%,rgba(230,57,70,0) 40%),#0D0D14!important}\n\n/* Titulares y textos (widgets nativos) */\n.tmw .tmw-h1 .elementor-heading-title{font-size:clamp(34px,5.4vw,56px);font-weight:900;line-height:1.08;letter-spacing:-.02em;color:#fff;margin:0}\n.tmw .tmw-h2 .elementor-heading-title{font-size:clamp(28px,3.6vw,40px);font-weight:800;line-height:1.15;color:var(--tmw-text);margin:0}\n.tmw.tmw-dark .tmw-h2 .elementor-heading-title{color:#fff}\n.tmw .tmw-red{color:var(--tmw-red)}\n.tmw .tmw-lead,.tmw .tmw-lead p{font-size:17px;line-height:1.6;color:var(--tmw-gray);margin:0}\n.tmw.tmw-dark .tmw-lead,.tmw.tmw-dark .tmw-lead p{color:var(--tmw-soft)}\n.tmw.tmw-dark .tmw-lead strong{color:#fff}\n.tmw .tmw-lead--hero,.tmw .tmw-lead--hero p{font-size:18px}\n.tmw .tmw-narrow{max-width:700px;margin-left:auto;margin-right:auto}\n.tmw .tmw-tc{text-align:center}\n.tmw .tmw-crumbs,.tmw .tmw-crumbs a,.tmw .tmw-crumbs span{font-size:13px;color:var(--tmw-muted)!important}\n\n/* Etiquetas */\n.tmw .tmw-eyebrow{display:inline-block;margin:0;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;line-height:1.6;color:var(--tmw-red-btn);background:rgba(230,57,70,.12);border:1px solid rgba(230,57,70,.25);padding:4px 14px;border-radius:50px}\n.tmw.tmw-dark .tmw-eyebrow{color:var(--tmw-red-light);background:rgba(230,57,70,.15);border-color:rgba(230,57,70,.3)}\n.tmw .tmw-badge{display:inline-flex;align-items:center;gap:8px;margin:0;background:rgba(230,57,70,.12);border:1px solid rgba(230,57,70,.3);border-radius:50px;padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--tmw-red-light)}\n.tmw .tmw-badge::before{content:\"\";width:7px;height:7px;border-radius:50%;background:var(--tmw-red);animation:tmw-pulse 2s infinite}\n@keyframes tmw-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}\n.tmw .tmw-kicker{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--tmw-muted)}\n\n/* Botones (widget Botón) */\n.tmw .tmw-btn .elementor-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 24px;border-radius:6px;border:2px solid transparent;font-size:15px;font-weight:700;line-height:1.2;text-decoration:none;transition:background-color .2s,border-color .2s,transform .2s}\n.tmw .tmw-btn .elementor-button:hover{transform:translateY(-1px)}\n.tmw .tmw-btn .elementor-button-icon svg{width:18px;height:18px;fill:currentColor}\n.tmw .tmw-btn--red .elementor-button{background:var(--tmw-red-btn);color:#fff}\n.tmw .tmw-btn--red .elementor-button:hover,.tmw .tmw-btn--red .elementor-button:focus{background:var(--tmw-red-hover);color:#fff}\n.tmw .tmw-btn--wa .elementor-button{background:#25D366;color:var(--tmw-dark)}\n.tmw .tmw-btn--wa .elementor-button:hover,.tmw .tmw-btn--wa .elementor-button:focus{background:#1AB659;color:var(--tmw-dark)}\n.tmw .tmw-btn--ghost .elementor-button{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}\n.tmw .tmw-btn--ghost .elementor-button:hover,.tmw .tmw-btn--ghost .elementor-button:focus{background:rgba(255,255,255,.08);color:#fff}\n.tmw a.tmw-link-btn,.tmw a.tmw-link-outline,.tmw a.tmw-link-ghost{display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 20px;border-radius:6px;font-weight:800;font-size:15px;text-decoration:none;transition:background-color .2s}\n.tmw a.tmw-link-btn{background:var(--tmw-red-btn);color:#fff}\n.tmw a.tmw-link-btn:hover,.tmw a.tmw-link-btn:focus{background:var(--tmw-red-hover);color:#fff}\n.tmw a.tmw-link-outline{border:2px solid var(--tmw-text);color:var(--tmw-text);font-weight:700}\n.tmw a.tmw-link-outline:hover,.tmw a.tmw-link-outline:focus{background:var(--tmw-text);color:#fff}\n.tmw a.tmw-link-ghost{display:inline-flex;min-height:46px;border:2px solid rgba(255,255,255,.4);color:#fff;font-weight:700}\n.tmw a.tmw-link-ghost:hover,.tmw a.tmw-link-ghost:focus{background:rgba(255,255,255,.1);color:#fff}\n\n/* Checks */\n.tmw .tmw-check{flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:var(--tmw-green);display:inline-flex;align-items:center;justify-content:center}\n.tmw .tmw-check--soft{flex:0 0 22px;width:22px;height:22px;margin-top:2px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.35)}\n.tmw .tmw-check svg{width:11px;height:11px;display:block}\n.tmw .tmw-trust{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px 22px}\n.tmw .tmw-trust li{display:flex;align-items:center;gap:8px;margin:0;font-size:14px;color:var(--tmw-soft)}\n\n/* Tarjeta oscura del formulario */\n.tmw .e-con.tmw-card-dark{background:var(--tmw-card);border:1px solid var(--tmw-line);border-radius:20px;box-shadow:0 4px 24px rgba(0,0,0,.18)}\n.tmw .tmw-card-title{margin:0 0 6px;font-size:22px;font-weight:800;line-height:1.25;color:#fff}\n.tmw .tmw-card-sub{margin:0;font-size:14px;color:var(--tmw-muted)}\n\n/* Contact Form 7 */\n.tmw .wpcf7 form>p,.tmw .wpcf7 form p{margin:0}\n.tmw .wpcf7 br{display:none}\n.tmw .tmw-form{display:grid;gap:16px}\n.tmw .tmw-form--2col{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px 12px}\n.tmw .tmw-form .tmw-full{grid-column:1/-1}\n.tmw .tmw-f-label,.tmw .tmw-chips legend{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--tmw-muted)}\n.tmw .wpcf7 input[type=email],.tmw .wpcf7 input[type=url],.tmw .wpcf7 input[type=text],.tmw .wpcf7 input[type=tel],.tmw .wpcf7 select{width:100%;min-height:48px;margin:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:0 14px;font-size:16px;font-weight:400;letter-spacing:0;text-transform:none;color:#fff;box-shadow:none}\n.tmw .wpcf7 select{background-color:var(--tmw-dark2)}\n.tmw .wpcf7 select option{background:var(--tmw-dark);color:#fff}\n.tmw .wpcf7 input::placeholder{color:var(--tmw-muted);opacity:1}\n.tmw .wpcf7 input:focus,.tmw .wpcf7 select:focus{outline:none;border-color:rgba(230,57,70,.6);box-shadow:0 0 0 3px rgba(230,57,70,.18)}\n.tmw .tmw-chips{border:0;margin:0;padding:0;min-width:0}\n.tmw .tmw-chips legend{margin-bottom:8px}\n.tmw .tmw-chips .wpcf7-radio{display:flex;flex-wrap:wrap;gap:8px}\n.tmw .tmw-chips .wpcf7-list-item{margin:0}\n.tmw .tmw-chips label{position:relative;display:block;margin:0;cursor:pointer}\n.tmw .tmw-chips input[type=radio]{position:absolute;opacity:0;width:1px;height:1px;margin:0}\n.tmw .tmw-chips .wpcf7-list-item-label{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:50px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:var(--tmw-soft);font-size:14px;font-weight:600;letter-spacing:0;text-transform:none;transition:background-color .15s,border-color .15s}\n.tmw .tmw-chips input[type=radio]:checked+.wpcf7-list-item-label{background:var(--tmw-red-btn);border-color:var(--tmw-red-btn);color:#fff}\n.tmw .tmw-chips input[type=radio]:focus-visible+.wpcf7-list-item-label{outline:2px solid var(--tmw-red-light);outline-offset:2px}\n.tmw .wpcf7-acceptance .wpcf7-list-item{margin:0}\n.tmw .wpcf7-acceptance label{display:flex;align-items:flex-start;gap:10px;margin:0;font-size:13px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--tmw-soft);cursor:pointer}\n.tmw .wpcf7-acceptance input{flex:0 0 18px;width:18px;height:18px;margin:2px 0 0;accent-color:var(--tmw-red-btn)}\n.tmw .wpcf7-acceptance a{color:var(--tmw-red-light)}\n.tmw .wpcf7 input[type=submit]{width:100%;min-height:54px;margin:0;border:0;border-radius:6px;background:var(--tmw-red-btn);color:#fff;font-size:16px;font-weight:800;letter-spacing:0;text-transform:none;box-shadow:none;cursor:pointer;transition:background-color .2s}\n.tmw .wpcf7 input[type=submit]:hover,.tmw .wpcf7 input[type=submit]:focus{background:var(--tmw-red-hover);color:#fff}\n.tmw .wpcf7 input[type=submit]:disabled{opacity:.6;cursor:not-allowed}\n.tmw .wpcf7-spinner{display:block;margin:8px auto 0}\n.tmw .tmw-f-note{margin:0;text-align:center;font-size:13px;color:var(--tmw-muted)}\n.tmw .wpcf7-not-valid-tip{margin-top:4px;font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--tmw-red-light)}\n.tmw .wpcf7 form .wpcf7-response-output{margin:16px 0 0;padding:12px 14px;border-radius:6px;font-size:14px;color:#fff;border-color:var(--tmw-red)}\n.tmw .wpcf7 form.sent .wpcf7-response-output{border-color:var(--tmw-green)}\n\n/* Logos */\n.tmw .tmw-logos-label{margin:0 0 20px;text-align:center;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--tmw-muted)}\n.tmw .tmw-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:24px 64px}\n.tmw .tmw-logos .tmw-logo{height:46px;width:auto;display:block;opacity:.9}\n.tmw .tmw-logos img.tmw-logo{height:40px}\n\n/* Problema */\n.tmw .tmw-risks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}\n.tmw .tmw-risk{display:flex;gap:14px;align-items:flex-start;margin:0;background:#fff;border:1px solid var(--tmw-line-light);border-radius:12px;padding:16px}\n.tmw .tmw-risk svg{flex:0 0 24px;margin-top:2px}\n.tmw .tmw-risk strong{display:block;margin-bottom:2px;font-size:16px;font-weight:700;color:var(--tmw-text)}\n.tmw .tmw-risk span{font-size:15px;line-height:1.5;color:var(--tmw-gray)}\n.tmw .tmw-figure{margin:0;background:var(--tmw-dark);border:1px solid var(--tmw-line);border-radius:20px;padding:32px;color:#fff}\n.tmw .tmw-figure figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;margin:0 0 18px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--tmw-muted)}\n.tmw .tmw-figure figcaption span+span{font-weight:400;letter-spacing:0;text-transform:none}\n.tmw .tmw-figure svg{display:block;width:100%;height:auto}\n.tmw .tmw-quote{margin:20px 0 0;padding:16px 18px;background:var(--tmw-card);border:1px solid var(--tmw-line);border-radius:12px;font-size:16px;font-style:normal;font-weight:600;line-height:1.5;color:#fff}\n.tmw .tmw-quote span{color:var(--tmw-red-light)}\n\n/* Tipos */\n.tmw .tmw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px}\n.tmw .tmw-card{background:#fff;border:1px solid var(--tmw-line-light);border-radius:12px;padding:24px;transition:box-shadow .2s,transform .2s}\n.tmw .tmw-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.09);transform:translateY(-3px)}\n.tmw .tmw-icon{width:48px;height:48px;border-radius:12px;background:rgba(230,57,70,.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px}\n.tmw .tmw-card h3{margin:0 0 8px;font-size:17px;font-weight:700;line-height:1.3;color:var(--tmw-text)}\n.tmw .tmw-card p{margin:0;font-size:15px;line-height:1.6;color:var(--tmw-gray)}\n\n/* Proceso */\n.tmw .tmw-steps{list-style:none;margin:0 auto;padding:0;max-width:780px;position:relative;display:flex;flex-direction:column;gap:28px}\n.tmw .tmw-steps::before{content:\"\";position:absolute;left:23px;top:28px;bottom:28px;width:2px;background:linear-gradient(to bottom,var(--tmw-red),rgba(230,57,70,.1))}\n.tmw .tmw-step{display:grid;grid-template-columns:48px minmax(0,1fr);gap:20px;position:relative;margin:0}\n.tmw .tmw-step-num{width:48px;height:48px;border-radius:50%;background:var(--tmw-dark);border:2px solid var(--tmw-red);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--tmw-red-light)}\n.tmw .tmw-step-body{background:#fff;border:1px solid var(--tmw-line-light);border-radius:12px;padding:20px 22px}\n.tmw .tmw-step h3{margin:0 0 6px;font-size:18px;font-weight:700;line-height:1.3;color:var(--tmw-text)}\n.tmw .tmw-step p{margin:0;font-size:15px;line-height:1.65;color:var(--tmw-gray)}\n\n/* Test de riesgo */\n.tmw .tmw-test{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:start}\n.tmw .tmw-factors{display:flex;flex-direction:column;gap:10px}\n.tmw button.tmw-factor{display:flex;align-items:center;gap:14px;width:100%;min-height:52px;margin:0;padding:10px 16px;text-align:left;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:var(--tmw-card);color:#fff;font-family:inherit;font-size:16px;font-weight:400;line-height:1.4;letter-spacing:0;text-transform:none;box-shadow:none;cursor:pointer;transition:border-color .15s,background-color .15s}\n.tmw button.tmw-factor:hover{background:#22223A;color:#fff;border-color:rgba(255,255,255,.25)}\n.tmw button.tmw-factor[aria-pressed=true]{background:rgba(230,57,70,.1);border-color:var(--tmw-red)}\n.tmw button.tmw-factor:focus-visible{outline:2px solid var(--tmw-red-light);outline-offset:2px}\n.tmw .tmw-box{flex:0 0 22px;width:22px;height:22px;border-radius:6px;border:2px solid var(--tmw-muted);display:flex;align-items:center;justify-content:center}\n.tmw .tmw-box svg{opacity:0;width:12px;height:12px}\n.tmw .tmw-factor[aria-pressed=true] .tmw-box{background:var(--tmw-red-btn);border-color:var(--tmw-red)}\n.tmw .tmw-factor[aria-pressed=true] .tmw-box svg{opacity:1}\n.tmw .tmw-result{background:var(--tmw-card);border:1px solid var(--tmw-line);border-radius:20px;padding:32px}\n.tmw .tmw-level{margin:0 0 6px;font-size:48px;font-weight:900;line-height:1;color:var(--tmw-muted)}\n.tmw .tmw-count{margin:0 0 18px;font-size:13px;color:var(--tmw-muted)}\n.tmw .tmw-bar{height:8px;margin:0 0 20px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden}\n.tmw .tmw-bar span{display:block;height:100%;width:4%;background:var(--tmw-muted);border-radius:4px;transition:width .3s,background-color .3s}\n.tmw .tmw-msg{margin:0 0 24px;font-size:15px;line-height:1.6;color:var(--tmw-soft)}\n\n/* Qué incluye */\n.tmw .tmw-checks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px 28px}\n.tmw .tmw-checks li{display:flex;gap:12px;align-items:flex-start;margin:0;font-size:16px;line-height:1.5;color:var(--tmw-text)}\n.tmw .tmw-aside{background:var(--tmw-dark);color:#fff;border-radius:20px;padding:28px}\n.tmw .tmw-aside h3{margin:0 0 10px;font-size:21px;font-weight:800;line-height:1.3;color:#fff}\n.tmw .tmw-aside p{margin:0 0 22px;font-size:15px;line-height:1.6;color:var(--tmw-soft)}\n.tmw .tmw-aside .tmw-kicker{margin-bottom:10px}\n\n/* Precios */\n.tmw .tmw-prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px 20px;max-width:860px;margin:0 auto}\n.tmw .tmw-price{position:relative;display:flex;flex-direction:column;gap:18px;background:#fff;border:1px solid var(--tmw-line-light);border-radius:20px;padding:34px}\n.tmw .tmw-price--featured{border:2px solid var(--tmw-red);box-shadow:0 8px 32px rgba(230,57,70,.12)}\n.tmw .tmw-price-badge{position:absolute;top:-13px;left:24px;background:var(--tmw-red-btn);color:#fff;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:4px 12px;border-radius:50px}\n.tmw .tmw-price h3{margin:0 0 4px;font-size:20px;font-weight:800;color:var(--tmw-text)}\n.tmw .tmw-price-sub{margin:0;font-size:14px;color:var(--tmw-gray)}\n.tmw .tmw-price-amount{margin:0;color:var(--tmw-text)}\n.tmw .tmw-price-amount small{font-size:14px;color:var(--tmw-gray)}\n.tmw .tmw-price-amount strong{font-size:44px;font-weight:900;letter-spacing:-.02em;line-height:1.1}\n.tmw .tmw-price ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}\n.tmw .tmw-price li{display:flex;gap:10px;align-items:flex-start;margin:0;font-size:15px;color:var(--tmw-gray)}\n.tmw .tmw-price .tmw-link-btn,.tmw .tmw-price .tmw-link-outline{margin-top:auto}\n.tmw .tmw-note{margin:0;text-align:center;font-size:14px;color:var(--tmw-gray)}\n\n/* Comparativa */\n.tmw .tmw-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}\n.tmw table.tmw-table{width:100%;min-width:600px;margin:0;border-collapse:collapse;border:0;font-size:15px;background:transparent}\n.tmw .tmw-table th,.tmw .tmw-table td{padding:16px 20px;border:0;border-bottom:1px solid var(--tmw-line);text-align:left;vertical-align:top;background:transparent}\n.tmw .tmw-table thead th{font-size:13px;font-weight:700;color:var(--tmw-muted)}\n.tmw .tmw-table thead th.tmw-us{color:var(--tmw-red-light);background:rgba(230,57,70,.08);border-radius:6px 6px 0 0}\n.tmw .tmw-table tbody th{font-weight:600;color:#fff}\n.tmw .tmw-table tbody td.tmw-us{background:rgba(230,57,70,.05);font-weight:600;color:var(--tmw-green-light)}\n.tmw .tmw-table tbody td.tmw-them{color:var(--tmw-muted)}\n.tmw .tmw-table tbody tr:last-child th,.tmw .tmw-table tbody tr:last-child td{border-bottom:0}\n\n/* Testimonio */\n.tmw .tmw-testi{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:18px;background:var(--tmw-light);border:1px solid var(--tmw-line-light);border-radius:20px;padding:32px}\n.tmw .tmw-stars{display:flex;align-items:center;gap:10px;margin:0;font-size:14px;font-weight:600;color:var(--tmw-gray)}\n.tmw .tmw-stars span{color:#B45309;font-size:20px;letter-spacing:2px}\n.tmw .tmw-testi blockquote{margin:0;padding:0;border:0;font-size:clamp(17px,1.8vw,20px);font-style:normal;font-weight:600;line-height:1.5;color:var(--tmw-text)}\n.tmw .tmw-testi figcaption{display:flex;align-items:center;gap:12px}\n.tmw .tmw-avatar{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:var(--tmw-dark);color:var(--tmw-red-light);display:flex;align-items:center;justify-content:center;font-weight:800}\n.tmw .tmw-testi figcaption strong{display:block;color:var(--tmw-text)}\n.tmw .tmw-testi figcaption small{font-size:14px;color:var(--tmw-gray)}\n\n/* FAQ */\n.tmw .tmw-faq{display:flex;flex-direction:column;gap:12px;max-width:860px;margin:0 auto}\n.tmw .tmw-faq details{background:#fff;border:1px solid var(--tmw-line-light);border-radius:12px;transition:border-color .2s}\n.tmw .tmw-faq details[open]{border-color:rgba(230,57,70,.45)}\n.tmw .tmw-faq summary{list-style:none;display:flex;align-items:center;gap:12px;min-height:60px;padding:16px 20px;cursor:pointer}\n.tmw .tmw-faq summary::-webkit-details-marker{display:none}\n.tmw .tmw-faq summary::before{content:\"P\";flex:0 0 22px;height:22px;border-radius:4px;background:var(--tmw-red-btn);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}\n.tmw .tmw-faq summary::after{content:\"+\";flex:0 0 auto;margin-left:auto;font-size:24px;line-height:1;color:var(--tmw-red-btn);transition:transform .2s}\n.tmw .tmw-faq details[open] summary::after{transform:rotate(45deg)}\n.tmw .tmw-faq summary:focus-visible{outline:2px solid var(--tmw-red);outline-offset:2px;border-radius:12px}\n.tmw .tmw-faq h3{margin:0;font-size:16px;font-weight:700;line-height:1.4;color:var(--tmw-text)}\n.tmw .tmw-faq details p{margin:0;padding:0 20px 20px 54px;font-size:15px;line-height:1.65;color:var(--tmw-gray)}\n\n/* Contacto */\n.tmw .tmw-perks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}\n.tmw .tmw-perks li{display:flex;gap:12px;align-items:flex-start;margin:0;font-size:15px;line-height:1.5;color:var(--tmw-soft)}\n\n/* Responsive */\n@media (max-width:1024px){\n.tmw .tmw-test{grid-template-columns:1fr;gap:28px}\n}\n@media (max-width:767px){\n.tmw .tmw-figure,.tmw .tmw-result,.tmw .tmw-testi{padding:22px}\n.tmw .tmw-price{padding:26px 22px}\n.tmw .tmw-step{grid-template-columns:40px minmax(0,1fr);gap:14px}\n.tmw .tmw-step-num{width:40px;height:40px;font-size:14px}\n.tmw .tmw-steps::before{left:19px}\n.tmw .tmw-step-body{padding:16px}\n.tmw .tmw-faq details p{padding-left:20px}\n.tmw .tmw-btns{width:100%}\n.tmw .tmw-btns>.elementor-widget-button{flex:1 1 100%}\n.tmw .tmw-btns .elementor-button{width:100%}\n.tmw .tmw-logos{gap:20px 40px}\n.tmw .tmw-logos .tmw-logo{height:38px}\n.tmw .tmw-logos img.tmw-logo{height:34px}\n}\n@media (max-width:600px){\n.tmw table.tmw-table{min-width:0;font-size:14px}\n.tmw .tmw-table th,.tmw .tmw-table td{padding:12px 10px}\n}\n@media (prefers-reduced-motion:reduce){\n.tmw .tmw-badge::before{animation:none}\n.tmw .tmw-card,.tmw .tmw-btn .elementor-button{transition:none}\n.tmw .tmw-card:hover,.tmw .tmw-btn .elementor-button:hover{transform:none}\n}\n\n</style>"
+     },
+     "elements": []
+    },
+    {
+     "id": "75b0124",
+     "elType": "widget",
+     "widgetType": "breadcrumbs",
+     "isInner": false,
+     "settings": {
+      "_css_classes": "tmw-crumbs"
+     },
+     "elements": []
+    },
+    {
+     "id": "14f4ddc",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_direction_tablet": "column",
+      "flex_wrap": "nowrap",
+      "flex_align_items": "center",
+      "flex_align_items_tablet": "stretch",
+      "flex_gap": {
+       "column": "60",
+       "row": "60",
+       "isLinked": true,
+       "unit": "px",
+       "size": 60
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "a697e48",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 56,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "column": "20",
+         "row": "20",
+         "isLinked": true,
+         "unit": "px",
+         "size": 20
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "bec239a",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<p class=\"tmw-badge\">Especialistas en migraciones SEO</p>"
+         },
+         "elements": []
+        },
+        {
+         "id": "a6deca9",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Migración web <span class=\"tmw-red\">sin perder</span> posicionamiento SEO",
+          "header_size": "h1",
+          "_css_classes": "tmw-h1"
+         },
+         "elements": []
+        },
+        {
+         "id": "d16ac3b",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "isInner": false,
+         "settings": {
+          "editor": "<p>Cambiar de web, de plataforma o de dominio no debería costarte el tráfico ni los clientes que te ha llevado años conseguir. Planificamos, ejecutamos y vigilamos tu migración para que <strong>Google entienda el cambio desde el primer día</strong>.</p>",
+          "_css_classes": "tmw-lead tmw-lead--hero"
+         },
+         "elements": []
+        },
+        {
+         "id": "7b3b710",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "flex_wrap": "wrap",
+          "flex_gap": {
+           "column": "12",
+           "row": "12",
+           "isLinked": true,
+           "unit": "px",
+           "size": 12
+          },
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "css_classes": "tmw-btns"
+         },
+         "elements": [
+          {
+           "id": "50502bc",
+           "elType": "widget",
+           "widgetType": "button",
+           "isInner": false,
+           "settings": {
+            "text": "WhatsApp directo",
+            "link": {
+             "url": "https://wa.me/34627329737?text=Hola%2C%20quiero%20valorar%20la%20migraci%C3%B3n%20de%20mi%20web",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "_css_classes": "tmw-btn tmw-btn--wa",
+            "selected_icon": {
+             "value": "fab fa-whatsapp",
+             "library": "fa-brands"
+            }
+           },
+           "elements": []
+          },
+          {
+           "id": "366eb15",
+           "elType": "widget",
+           "widgetType": "button",
+           "isInner": false,
+           "settings": {
+            "text": "Llamar ahora",
+            "link": {
+             "url": "tel:+34627329737",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "_css_classes": "tmw-btn tmw-btn--ghost",
+            "selected_icon": {
+             "value": "fas fa-phone-alt",
+             "library": "fa-solid"
+            }
+           },
+           "elements": []
+          }
+         ]
+        },
+        {
+         "id": "0ff715a",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<ul class=\"tmw-trust\"><li><span class=\"tmw-check\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Redirecciones URL a URL</li><li><span class=\"tmw-check\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Seguimiento 90 días</li><li><span class=\"tmw-check\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Desde 300 €</li><li><span class=\"tmw-check\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Sin permanencia</li></ul>"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "7ec5ff1",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 44,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "column": "18",
+         "row": "18",
+         "isLinked": true,
+         "unit": "px",
+         "size": 18
+        },
+        "padding": {
+         "unit": "px",
+         "top": "32",
+         "right": "28",
+         "bottom": "32",
+         "left": "28",
+         "isLinked": false
+        },
+        "css_classes": "tmw-card-dark"
+       },
+       "elements": [
+        {
+         "id": "dbfc54d",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<p class=\"tmw-kicker\">Valoración gratuita · 24 h</p><p class=\"tmw-card-title\">¿Cuánto arriesgas al migrar tu web?</p>"
+         },
+         "elements": []
+        },
+        {
+         "id": "cbb7fbc",
+         "elType": "widget",
+         "widgetType": "shortcode",
+         "isInner": false,
+         "settings": {
+          "shortcode": "[contact-form-7 id=\"PEGA-AQUI-ID-FORM-HERO\" title=\"Migración web – Hero\"]"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "52921f4",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "0",
+     "row": "0",
+     "isLinked": true,
+     "unit": "px",
+     "size": 0
+    },
+    "padding": {
+     "unit": "px",
+     "top": "28",
+     "right": "20",
+     "bottom": "28",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "24",
+     "right": "16",
+     "bottom": "24",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#12121E",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-dark tmw-logos-strip"
+   },
+   "elements": [
+    {
+     "id": "083212d",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<p class=\"tmw-logos-label\">Empresas que confían en Tiro al Marketing</p><div class=\"tmw-logos\"><svg xmlns=\"http://www.w3.org/2000/svg\" class=\"tmw-logo\" role=\"img\" aria-label=\"Almark Eventos\" viewBox=\"0 0 517.47 159.91\"><path fill=\"#ffffff\" d=\"M379.69,137.09h-9.63v4h10.76v5.34H363.41v-23.7h16.88v5.34H370.06v3.63h9.63Zm10.13-7.91,2.19,7.49a34.86,34.86,0,0,1,.84,3.76H393c.21-1.26.42-2.42.77-3.76l2-7.49h7.11L396,146.48h-6.82l-6.61-17.3Zm20.79,10.87c.25,1.3,2.46,2,4.75,2a16.69,16.69,0,0,0,5.17-.7l.85,4.36a18.26,18.26,0,0,1-6.93,1.2c-6.47,0-10.13-3.49-10.13-9a9.09,9.09,0,0,1,9.49-9.18c6.19,0,8.55,4.6,8.55,9a10.41,10.41,0,0,1-.25,2.29Zm5.6-4.47a2.6,2.6,0,0,0-2.71-2.6,3,3,0,0,0-3,2.6Zm9.18-.39c0-2.46-.07-4.46-.14-6H431l.28,2.29h.14a6.61,6.61,0,0,1,5.49-2.71c4.15,0,6.72,2.67,6.72,7.74v10H437v-9c0-2.25-.81-3.45-2.46-3.45a2.44,2.44,0,0,0-2.32,1.69,3.14,3.14,0,0,0-.14,1.16v9.6h-6.65Zm29.58-11v5h3.66v4.92H455v4.33c0,2.11.35,3.09,2.11,3.09a7.81,7.81,0,0,0,1.58-.14v5a12.81,12.81,0,0,1-4,.53,6.4,6.4,0,0,1-4.57-1.73c-1.06-1.09-1.59-2.88-1.59-5.45V134.1h-2.18v-4.92h2.18v-3.55Zm25.92,13.43c0,5.91-4.53,9.29-10.13,9.29-5.38,0-9.91-3.24-9.91-8.94,0-5.27,3.69-9.21,10.34-9.21,5.73,0,9.7,3.66,9.7,8.86m-13.12.21c0,2.46,1,4.47,3.17,4.47,1.9,0,3-1.59,3-4.47,0-2.43-.91-4.47-3-4.47-2.32,0-3.17,2.22-3.17,4.47M484.34,141a12.71,12.71,0,0,0,5.31,1.44c1.45,0,2-.28,2-.88s-.35-.84-2.35-1.37c-4-1.05-5.63-3.16-5.6-5.38,0-3.52,3.17-6,7.95-6a14.63,14.63,0,0,1,5.63,1.05l-1.05,4.43a11.53,11.53,0,0,0-4.3-1.05c-1.09,0-1.79.21-1.79.91s.6.92,2.81,1.52c3.63,1,5.14,2.7,5.17,5.45,0,3.2-2.56,5.84-8.37,5.84a15.34,15.34,0,0,1-6.5-1.31Z\"/><path fill=\"#ffffff\" d=\"M194.68,85.74l-8.4-25.07-7.12-21.49H158.51l-25.34,75.88H152l4.7-15.37h23.78l4.7,15.37H204.5l-5.12-15.37Zm-33.89,0,7.69-25.07,7.83,25.07Z\"/><rect fill=\"#ffffff\" x=\"210.91\" y=\"35.75\" width=\"17.66\" height=\"79.31\"/><path fill=\"#aac81a\" d=\"M382.34,67.23l-.43-1.57-2.14-3.42-3-2.85-3.85-2.13-4.84-1.57-5.69-.85-6.84-.29h-3l-3,.29-3,.28-2.85.43-2.7.57-2.42.42-1.85.43-1.57.43V71.21h1.57l2-.85,2-.71,2.14-.72,2-.57,2-.56,2-.29,1.71-.28h4.84l2.84.42,2.29.57,2,.71L364,70.07l1.14,1.43.57,1.85.28,2.13v.29l-3.7.28-3.7.43-3.56.28-3.27.43-3.28.57-3,.71-2.7,1-2.57,1-2.13,1.28-2,1.42-1.7,1.71-1.29,1.85-1.13,2.14-.86,2.42-.43,2.7-.14,3.13.29,3.71,1,3.42,1.57,3,2.14,2.71,2.56,2.28,3,1.56,3.27,1,3.56.29h2l1.56-.15,1.42-.14,1.29-.28,1.56-.43,1.42-.71,3.28-1.57,1.28-.86.86-.71,1-.85,2.28-2v6.12h17.66v-39l-.43-4.7ZM365.82,98.55l-1.28,1.28-1.42,1-3.28,1.42-1.57.43h-1.42l-2-.14-1.71-.29-1.42-.43-1.29-.71-.85-.85L348.88,99l-.43-1.57v-3.7l.43-1.43.71-1.13,1-1.14,1.14-.86,1.56-.42L355,88l1.85-.42,9-1Z\"/><polygon fill=\"#aac81a\" points=\"321.11 69.5 320.83 68.36 320.4 66.37 319.69 64.67 319.69 64.52 318.83 62.81 317.98 61.24 316.84 59.82 315.7 58.68 314.42 57.54 313 56.69 311.57 55.98 309.86 55.41 308.15 54.98 306.31 54.84 304.45 54.7 302.18 54.84 299.9 55.41 297.62 56.12 295.34 57.26 293.06 58.68 290.64 60.39 288.22 62.38 285.66 64.67 284.66 62.67 284.52 62.38 283.1 60.39 281.53 58.68 279.68 57.26 277.68 56.12 275.41 55.41 273.13 54.84 270.57 54.7 268.29 54.84 266.01 55.27 263.87 55.98 261.88 56.83 260.03 57.97 258.04 59.25 255.9 60.82 253.76 62.67 253.76 56.26 236.11 56.26 236.11 113.5 253.76 113.5 253.76 72.92 255.04 72.07 256.47 71.21 259.17 69.93 260.6 69.5 264.02 69.5 265.44 69.79 266.44 70.36 267.58 70.93 268.43 71.92 268.86 73.06 269.43 74.34 269.71 75.91 269.86 77.9 269.86 79.33 270 81.04 270 82.89 270 113.5 287.65 113.5 287.65 72.92 289.22 71.92 290.64 71.07 293.35 69.79 294.63 69.5 297.9 69.5 299.33 69.79 301.46 70.93 302.32 71.92 302.74 73.06 303.31 74.34 303.6 75.91 303.74 77.9 303.74 79.33 303.88 81.04 303.88 82.89 303.88 113.5 321.54 113.5 321.54 75.91 321.54 73.35 321.25 70.79 321.11 69.5\"/><polygon fill=\"#aac81a\" points=\"433.45 56.12 432.03 56.12 431.32 56.12 429.32 56.12 427.62 56.41 425.91 56.97 424.2 57.54 422.78 58.11 421.49 58.97 420.35 59.68 418.93 60.53 417.5 61.67 416.08 62.81 414.94 63.81 414.23 64.52 414.23 56.26 396.43 56.26 396.43 113.5 414.23 113.5 414.23 75.2 415.66 74.63 417.08 74.2 418.64 73.78 420.07 73.35 421.64 72.92 423.06 72.64 424.63 72.5 425.91 72.5 427.48 72.5 428.9 72.5 431.46 72.78 432.46 72.92 433.17 73.2 434.59 73.2 434.59 72.5 434.59 64.52 434.59 56.26 434.02 56.26 433.45 56.12\"/><polygon fill=\"#aac81a\" points=\"481.87 88.73 476.88 80.89 478.73 78.62 496.67 56.26 475.74 56.26 458.94 78.62 458.94 34.19 441.29 34.19 441.29 113.5 458.94 113.5 458.94 92.43 461.79 88.73 477.02 113.5 498.1 113.5 481.87 88.73\"/><polygon fill=\"#aac81a\" points=\"46.45 80.48 49.34 82.1 52.31 83.64 55.42 84.98 58.63 86.19 61.93 87.26 65.33 88.24 68.81 89.12 68.67 80.38 65.42 79.31 62.12 78.15 58.77 76.8 55.47 75.31 52.22 73.64 49.06 71.73 46.08 69.6 43.29 67.13 40.73 64.34 38.5 61.18 36.55 57.69 36.59 57.69 39.1 56.53 41.66 55.65 44.22 55 46.82 54.58 51.66 45.88 48.36 46.02 45.01 46.35 41.66 46.95 38.36 47.79 35.01 48.91 31.67 50.25 28.37 51.88 25.02 53.84 26.46 57.46 28.09 60.85 29.85 64.01 31.8 66.94 33.9 69.69 36.13 72.2 38.5 74.52 41.01 76.71 43.66 78.66 46.45 80.48\"/><polygon fill=\"#aac81a\" points=\"57.01 69.18 65.23 66.29 65.23 62.86 65.28 59.37 65.47 55.74 65.84 52.11 66.4 48.53 67.23 44.91 68.3 41.42 69.79 37.98 71.6 34.68 73.88 31.56 76.58 28.63 78.48 30.68 80.11 32.82 81.56 35.05 82.81 37.33 92.58 39.24 91.41 36.12 90.02 33.05 88.39 30.07 87.46 28.63 86.53 27.2 84.44 24.36 82.11 21.66 79.46 19.01 76.58 16.45 73.61 18.96 70.91 21.57 68.49 24.27 66.3 27 64.35 29.89 62.68 32.82 61.24 35.79 59.98 38.86 58.96 42.02 58.12 45.23 57.47 48.48 57.01 51.79 56.68 55.18 56.54 58.34 56.54 59.37 56.54 62.06 56.72 65.6 57.01 69.18\"/><polygon fill=\"#aac81a\" points=\"84.02 94.66 86.11 91.91 88.06 89.03 89.97 86.05 91.78 82.99 83.37 80.66 81.42 83.45 79.37 86.29 77.14 89.12 74.81 91.91 72.25 94.56 69.56 97.07 66.63 99.3 63.47 101.3 60.12 102.98 56.45 104.23 52.54 105.07 52.17 102.33 52.03 99.63 52.12 96.98 52.41 94.38 45.48 87.26 44.64 90.47 44.03 93.77 43.71 97.17 43.57 100.19 43.57 100.84 43.66 104.09 44.03 107.68 44.69 111.34 45.62 115.06 49.47 114.69 53.19 114.14 56.72 113.3 60.08 112.28 63.28 111.02 66.35 109.58 69.28 107.95 72.02 106.14 73.47 105.07 74.67 104.19 77.18 102 79.6 99.72 81.88 97.26 84.02 94.66\"/><polygon fill=\"#aac81a\" points=\"126.98 54.11 124.8 52.72 121.54 50.86 118.24 49.32 114.98 48.07 111.68 47.05 108.38 46.26 105.13 45.74 101.83 45.42 98.48 45.37 95.18 45.47 91.88 45.79 88.58 46.35 85.23 47 81.92 47.89 78.62 48.91 75.28 50.07 71.93 51.37 77.09 58.44 80.35 57.41 83.74 56.49 87.22 55.6 90.81 54.9 94.43 54.39 98.11 54.11 101.83 54.16 105.5 54.53 109.17 55.37 112.84 56.63 116.42 58.39 115.03 60.76 113.45 62.95 111.73 64.99 109.87 66.85 110.94 76.76 113.59 74.71 116.1 72.48 118.47 70.06 120.7 67.46 122.79 64.62 124.7 61.6 126.47 58.34 128.09 54.86 126.98 54.11\"/><polygon fill=\"#aac81a\" points=\"109.45 93.4 108.94 90.1 108.2 86.84 107.22 83.68 106.06 80.62 104.71 77.55 103.22 74.57 101.5 71.64 99.64 68.76 97.64 65.92 95.5 63.09 93.22 60.35 88.11 67.46 90.11 70.25 92.06 73.18 93.97 76.2 95.78 79.36 97.41 82.66 98.8 86.06 99.92 89.59 100.67 93.22 101.08 96.98 101.04 100.84 100.48 104.79 97.78 104.19 95.18 103.4 92.71 102.42 90.39 101.21 81.32 105.3 84.06 107.21 86.95 108.89 89.97 110.37 93.18 111.67 96.52 112.79 100.01 113.67 103.64 114.32 107.45 114.74 107.5 114.74 108.47 110.97 109.17 107.3 109.5 104.79 109.64 103.72 109.82 100.19 109.78 96.75 109.45 93.4\"/></svg><img class=\"tmw-logo\" src=\"data:image/webp;base64,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\" alt=\"Soluciones Grupalia\" width=\"243\" height=\"66\" loading=\"lazy\" decoding=\"async\"></div>"
+     },
+     "elements": []
+    }
+   ]
+  },
+  {
+   "id": "a13cad1",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "24",
+     "row": "24",
+     "isLinked": true,
+     "unit": "px",
+     "size": 24
+    },
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "20",
+     "bottom": "80",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#F7F7FA",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-light"
+   },
+   "elements": [
+    {
+     "id": "38f0f41",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_direction_tablet": "column",
+      "flex_wrap": "nowrap",
+      "flex_align_items": "center",
+      "flex_align_items_tablet": "stretch",
+      "flex_gap": {
+       "column": "60",
+       "row": "60",
+       "isLinked": true,
+       "unit": "px",
+       "size": 60
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "6d53517",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 52,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "column": "18",
+         "row": "18",
+         "isLinked": true,
+         "unit": "px",
+         "size": 18
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "8223fbe",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<div><p class=\"tmw-eyebrow\">El riesgo</p></div>"
+         },
+         "elements": []
+        },
+        {
+         "id": "341fedd",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Una migración mal hecha puede hundir tu tráfico en semanas",
+          "header_size": "h2",
+          "_css_classes": "tmw-h2"
+         },
+         "elements": []
+        },
+        {
+         "id": "10c440e",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "isInner": false,
+         "settings": {
+          "editor": "<p>Rediseñar la web, pasar de Wix a WordPress o estrenar dominio suele ser una buena decisión de negocio. El problema es cómo se hace. Cuando una migración se trata solo como un proyecto de diseño, pasa esto:</p>",
+          "_css_classes": "tmw-lead"
+         },
+         "elements": []
+        },
+        {
+         "id": "3f05236",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<ul class=\"tmw-risks\"><li class=\"tmw-risk\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C0303C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1M4 4l16 16\"/></svg><div><strong>Las URLs cambian y no se redirigen</strong><span>Google y los usuarios llegan a páginas 404 y la autoridad acumulada se pierde.</span></div></li><li class=\"tmw-risk\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C0303C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6ZM9 14h6\"/></svg><div><strong>Desaparece contenido que posicionaba</strong><span>Textos que «sobraban» en el diseño nuevo eran justo los que traían clientes.</span></div></li><li class=\"tmw-risk\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C0303C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"4\" y=\"10\" width=\"16\" height=\"11\" rx=\"2\"/><path d=\"M8 10V7a4 4 0 0 1 8 0v3\"/></svg><div><strong>La web nueva se publica bloqueada</strong><span>Un noindex o un robots.txt de la fase de desarrollo que nadie quitó.</span></div></li><li class=\"tmw-risk\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C0303C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 3v18h18M7 14l4-4 3 3 5-6\"/></svg><div><strong>Se rompe la medición y nadie vigila</strong><span>Formularios y eventos de GA4 dejan de contar; el error se ve cuando las ventas ya han caído.</span></div></li></ul>"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "8e7baf1",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 48,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "column": "16",
+         "row": "16",
+         "isLinked": true,
+         "unit": "px",
+         "size": 16
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "171d864",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<figure class=\"tmw-figure\">\n<figcaption><span>Tráfico orgánico tras el lanzamiento</span><span>Ilustración, no datos reales</span></figcaption>\n<svg viewBox=\"0 0 560 250\" role=\"img\" aria-label=\"Ilustración: sin plan, el tráfico cae con fuerza tras el lanzamiento y se recupera solo en parte; con plan, baja ligeramente y se estabiliza en semanas.\">\n<line x1=\"40\" y1=\"210\" x2=\"545\" y2=\"210\" stroke=\"#444466\" stroke-width=\"1\"/>\n<line x1=\"40\" y1=\"60\" x2=\"545\" y2=\"60\" stroke=\"#1A1A28\" stroke-width=\"1\"/>\n<line x1=\"40\" y1=\"135\" x2=\"545\" y2=\"135\" stroke=\"#1A1A28\" stroke-width=\"1\"/>\n<line x1=\"230\" y1=\"28\" x2=\"230\" y2=\"210\" stroke=\"#8888A0\" stroke-width=\"1.5\" stroke-dasharray=\"5 5\"/>\n<text x=\"236\" y=\"40\" fill=\"#C8C8D8\" font-size=\"13\">Lanzamiento</text>\n<polyline points=\"40,82 80,78 120,84 160,76 200,80 230,78 260,150 300,176 340,170 380,160 420,150 460,146 500,140 545,138\" fill=\"none\" stroke=\"#FF6B7A\" stroke-width=\"3.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-dasharray=\"9 6\"/>\n<polyline points=\"40,82 80,78 120,84 160,76 200,80 230,78 260,94 300,92 340,84 380,78 420,74 460,70 500,68 545,64\" fill=\"none\" stroke=\"#4ADE80\" stroke-width=\"3.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<text x=\"430\" y=\"54\" fill=\"#4ADE80\" font-size=\"14\" font-weight=\"700\">Con plan</text>\n<text x=\"430\" y=\"128\" fill=\"#FF6B7A\" font-size=\"14\" font-weight=\"700\">Sin plan</text>\n<text x=\"40\" y=\"236\" fill=\"#8888A0\" font-size=\"12\">Antes</text>\n<text x=\"488\" y=\"236\" fill=\"#8888A0\" font-size=\"12\">+90 días</text>\n</svg>\n<blockquote class=\"tmw-quote\">El momento de proteger tu SEO no es después de lanzar la web nueva: <span>es antes de empezar a diseñarla.</span></blockquote>\n</figure>"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "0cec0f9",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "24",
+     "row": "24",
+     "isLinked": true,
+     "unit": "px",
+     "size": 24
+    },
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "20",
+     "bottom": "80",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-white"
+   },
+   "elements": [
+    {
+     "id": "abb26ca",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div class=\"tmw-tc\"><p class=\"tmw-eyebrow\">Tipos de migración</p></div>"
+     },
+     "elements": []
+    },
+    {
+     "id": "8710ec4",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "¿Qué tipo de migración necesitas?",
+      "header_size": "h2",
+      "_css_classes": "tmw-h2 tmw-narrow",
+      "align": "center"
+     },
+     "elements": []
+    },
+    {
+     "id": "36b3026",
+     "elType": "widget",
+     "widgetType": "text-editor",
+     "isInner": false,
+     "settings": {
+      "editor": "<p>Trabajamos cualquier cambio que afecte a la estructura, la plataforma o la dirección de tu web.</p>",
+      "_css_classes": "tmw-lead tmw-narrow",
+      "align": "center"
+     },
+     "elements": []
+    },
+    {
+     "id": "275a90a",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div class=\"tmw-grid\"><article class=\"tmw-card\"><div class=\"tmw-icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C0303C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 9h18M8 21h8\"/></svg></div><h3>Rediseño web</h3><p>Nuevo diseño o estructura con el mismo dominio. La migración más frecuente y la más subestimada.</p></article><article class=\"tmw-card\"><div class=\"tmw-icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C0303C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 7h13l-3-3M20 17H7l3 3\"/></svg></div><h3>Cambio de CMS</h3><p>De Wix, Squarespace o Joomla a WordPress; de WooCommerce a Shopify o al revés.</p></article><article class=\"tmw-card\"><div class=\"tmw-icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C0303C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18\"/></svg></div><h3>Cambio de dominio</h3><p>Nueva marca, de .es a .com o unificación, sin que Google lo trate como una web nueva.</p></article><article class=\"tmw-card\"><div class=\"tmw-icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C0303C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 4v6a6 6 0 0 0 12 0V4M12 16v5\"/></svg></div><h3>Fusión de webs</h3><p>Varias webs en una. Decidimos qué se conserva, qué se fusiona y cómo se redirige cada URL.</p></article><article class=\"tmw-card\"><div class=\"tmw-icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C0303C\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 6h16M4 12h10M4 18h6M17 15l3 3-3 3\"/></svg></div><h3>URLs e idiomas</h3><p>Nuevas categorías, subcarpetas de idioma, quitar fechas del blog o pasar a HTTPS.</p></article></div>"
+     },
+     "elements": []
+    }
+   ]
+  },
+  {
+   "id": "be1612a",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "28",
+     "row": "28",
+     "isLinked": true,
+     "unit": "px",
+     "size": 28
+    },
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "20",
+     "bottom": "80",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#F7F7FA",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-light"
+   },
+   "elements": [
+    {
+     "id": "09fb9af",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div class=\"tmw-tc\"><p class=\"tmw-eyebrow\">Metodología</p></div>"
+     },
+     "elements": []
+    },
+    {
+     "id": "2880826",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Cómo migramos tu web sin perder posicionamiento",
+      "header_size": "h2",
+      "_css_classes": "tmw-h2 tmw-narrow",
+      "align": "center"
+     },
+     "elements": []
+    },
+    {
+     "id": "f737909",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<ol class=\"tmw-steps\"><li class=\"tmw-step\"><span class=\"tmw-step-num\" aria-hidden=\"true\">01</span><div class=\"tmw-step-body\"><h3>Auditoría y foto de partida</h3><p>Rastreamos y exportamos todas las URLs (también las que solo existen en Search Console, en backlinks o en campañas), identificamos las páginas que traen tráfico, enlaces y leads, y registramos tu situación actual para poder comparar después.</p></div></li><li class=\"tmw-step\"><span class=\"tmw-step-num\" aria-hidden=\"true\">02</span><div class=\"tmw-step-body\"><h3>Planificación</h3><p>Mapa de redirecciones 301 URL a URL, validación de la arquitectura y el contenido de la web nueva, plan de medición (GA4, GTM y Search Console) y fecha de lanzamiento fuera de tu temporada alta.</p></div></li><li class=\"tmw-step\"><span class=\"tmw-step-num\" aria-hidden=\"true\">03</span><div class=\"tmw-step-body\"><h3>Revisión en entorno de pruebas</h3><p>Rastreo técnico de la web nueva antes de publicarla: enlaces rotos, canonicals, indexabilidad, datos estructurados y velocidad. Probamos formularios, WhatsApp y eventos de conversión.</p></div></li><li class=\"tmw-step\"><span class=\"tmw-step-num\" aria-hidden=\"true\">04</span><div class=\"tmw-step-body\"><h3>Día del lanzamiento</h3><p>Activamos y verificamos las redirecciones, retiramos los bloqueos de desarrollo, enviamos el sitemap y, si cambias de dominio, usamos la herramienta Cambio de dirección de Search Console.</p></div></li><li class=\"tmw-step\"><span class=\"tmw-step-num\" aria-hidden=\"true\">05</span><div class=\"tmw-step-body\"><h3>Seguimiento 90 días</h3><p>Revisión diaria la primera semana y semanal hasta el día 90. Corregimos 404 y cadenas de redirección, y te entregamos un informe comparativo frente a la foto de partida.</p></div></li></ol>"
+     },
+     "elements": []
+    },
+    {
+     "id": "1d26ae1",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_wrap": "wrap",
+      "flex_gap": {
+       "column": "12",
+       "row": "12",
+       "isLinked": true,
+       "unit": "px",
+       "size": 12
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      },
+      "css_classes": "tmw-btns",
+      "flex_justify_content": "center"
+     },
+     "elements": [
+      {
+       "id": "f7a54a2",
+       "elType": "widget",
+       "widgetType": "button",
+       "isInner": false,
+       "settings": {
+        "text": "Quiero un plan para mi migración",
+        "link": {
+         "url": "#contacto",
+         "is_external": "",
+         "nofollow": "",
+         "custom_attributes": ""
+        },
+        "_css_classes": "tmw-btn tmw-btn--red"
+       },
+       "elements": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "466bdac",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "20",
+     "row": "20",
+     "isLinked": true,
+     "unit": "px",
+     "size": 20
+    },
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "20",
+     "bottom": "80",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#0D0D14",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-dark"
+   },
+   "elements": [
+    {
+     "id": "bff505e",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div><p class=\"tmw-eyebrow\">Test de 30 segundos</p></div>"
+     },
+     "elements": []
+    },
+    {
+     "id": "44f88c0",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "¿Cuánto riesgo tiene tu migración?",
+      "header_size": "h2",
+      "_css_classes": "tmw-h2"
+     },
+     "elements": []
+    },
+    {
+     "id": "772df7d",
+     "elType": "widget",
+     "widgetType": "text-editor",
+     "isInner": false,
+     "settings": {
+      "editor": "<p>Marca lo que se aplica a tu proyecto. Es orientativo: el riesgo real lo medimos en la auditoría previa.</p>",
+      "_css_classes": "tmw-lead"
+     },
+     "elements": []
+    },
+    {
+     "id": "683168a",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div class=\"tmw-test\" id=\"tmw-test\">\n<div class=\"tmw-factors\" role=\"group\" aria-label=\"Factores de riesgo de tu migración\">\n<button type=\"button\" class=\"tmw-factor\" aria-pressed=\"false\" data-w=\"3\"><span class=\"tmw-box\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span><span>Las URLs van a cambiar</span></button>\n<button type=\"button\" class=\"tmw-factor\" aria-pressed=\"false\" data-w=\"3\"><span class=\"tmw-box\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span><span>Cambias de dominio</span></button>\n<button type=\"button\" class=\"tmw-factor\" aria-pressed=\"false\" data-w=\"2\"><span class=\"tmw-box\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span><span>Cambias de CMS o plataforma</span></button>\n<button type=\"button\" class=\"tmw-factor\" aria-pressed=\"false\" data-w=\"2\"><span class=\"tmw-box\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span><span>Tu web tiene más de 100 URLs indexadas</span></button>\n<button type=\"button\" class=\"tmw-factor\" aria-pressed=\"false\" data-w=\"2\"><span class=\"tmw-box\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span><span>Es una tienda online</span></button>\n<button type=\"button\" class=\"tmw-factor\" aria-pressed=\"false\" data-w=\"2\"><span class=\"tmw-box\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span><span>Quieres lanzar en menos de 4 semanas</span></button>\n<button type=\"button\" class=\"tmw-factor\" aria-pressed=\"false\" data-w=\"3\"><span class=\"tmw-box\" aria-hidden=\"true\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span><span>Nadie revisa el SEO antes de publicar</span></button>\n</div>\n<div class=\"tmw-result\" aria-live=\"polite\">\n<p class=\"tmw-kicker\">Nivel de riesgo estimado</p>\n<p class=\"tmw-level\">—</p>\n<p class=\"tmw-count\">0 factores de riesgo marcados</p>\n<div class=\"tmw-bar\"><span></span></div>\n<p class=\"tmw-msg\">Marca al menos una casilla para estimar el riesgo de tu proyecto.</p>\n<a class=\"tmw-link-btn\" href=\"#contacto\">Pedir valoración de mi migración</a>\n</div>\n</div>\n<script>\n(function(){\nvar root=document.getElementById('tmw-test');if(!root)return;\nvar btns=root.querySelectorAll('.tmw-factor'),level=root.querySelector('.tmw-level'),bar=root.querySelector('.tmw-bar span'),msg=root.querySelector('.tmw-msg'),count=root.querySelector('.tmw-count'),max=0,used=false;\nbtns.forEach(function(b){max+=+b.getAttribute('data-w');});\nvar L={none:['—','#8888A0','Marca al menos una casilla para estimar el riesgo de tu proyecto.'],low:['Bajo','#4ADE80','Una revisión SEO antes de publicar y un buen mapa de redirecciones deberían bastar. Te ayudamos a confirmarlo.'],mid:['Medio','#FBBF24','Hay cambios que pueden costarte posiciones si no se planifican. Conviene empezar la auditoría previa antes de maquetar.'],high:['Alto','#FF6B7A','Tu migración combina varios factores de riesgo. Sin un plan, es probable una caída de tráfico importante. Hablemos cuanto antes.']};\nfunction update(){\nvar s=0,n=0,names=[];\nbtns.forEach(function(b){if(b.getAttribute('aria-pressed')==='true'){s+=+b.getAttribute('data-w');n++;names.push(b.textContent.trim());}});\nvar r=L[s===0?'none':s<=3?'low':s<=7?'mid':'high'];\nlevel.textContent=r[0];level.style.color=r[1];msg.textContent=r[2];\nbar.style.width=Math.max(4,Math.round(s/max*100))+'%';bar.style.background=r[1];\ncount.textContent=n===1?'1 factor de riesgo marcado':n+' factores de riesgo marcados';\nvar f=document.querySelectorAll('input[name=\"riesgo-test\"]');\nf.forEach(function(i){i.value=n?r[0]+': '+names.join('; '):'';});\n}\nbtns.forEach(function(b){b.addEventListener('click',function(){\nb.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');update();\nif(!used){used=true;window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'test_riesgo_migracion'});}\n});});\nupdate();\n})();\n</script>"
+     },
+     "elements": []
+    }
+   ]
+  },
+  {
+   "id": "71d4a46",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "24",
+     "row": "24",
+     "isLinked": true,
+     "unit": "px",
+     "size": 24
+    },
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "20",
+     "bottom": "80",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-white"
+   },
+   "elements": [
+    {
+     "id": "af89bf7",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_direction_tablet": "column",
+      "flex_wrap": "nowrap",
+      "flex_align_items": "center",
+      "flex_align_items_tablet": "stretch",
+      "flex_gap": {
+       "column": "56",
+       "row": "56",
+       "isLinked": true,
+       "unit": "px",
+       "size": 56
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "c9a06c2",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 62,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "column": "20",
+         "row": "20",
+         "isLinked": true,
+         "unit": "px",
+         "size": 20
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "fef6a2c",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<div><p class=\"tmw-eyebrow\">Entregables</p></div>"
+         },
+         "elements": []
+        },
+        {
+         "id": "c736afa",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "Qué incluye nuestro servicio de migración web SEO",
+          "header_size": "h2",
+          "_css_classes": "tmw-h2"
+         },
+         "elements": []
+        },
+        {
+         "id": "f96951d",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<ul class=\"tmw-checks\"><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Auditoría SEO previa y foto de partida</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Inventario completo de URLs y páginas clave</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Mapa de redirecciones 301 URL a URL</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Revisión SEO de la web nueva en pruebas</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>GA4, GTM y Search Console configurados y probados</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Acompañamiento el día del lanzamiento</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Seguimiento y correcciones durante 90 días</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Informe final comparativo</li></ul>"
+         },
+         "elements": []
+        }
+       ]
+      },
+      {
+       "id": "c78cdf0",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 38,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "column": "16",
+         "row": "16",
+         "isLinked": true,
+         "unit": "px",
+         "size": 16
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "34cf2b1",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<div class=\"tmw-aside\"><p class=\"tmw-kicker\">Proyecto completo</p><h3>¿Aún no tienes web nueva?</h3><p>La diseñamos en WordPress con nuestro servicio de diseño web SEO, y la migración va incluida en el proyecto.</p><a class=\"tmw-link-ghost\" href=\"/diseno-web-seo/\">Ver diseño web SEO</a></div>"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fd2c011",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "24",
+     "row": "24",
+     "isLinked": true,
+     "unit": "px",
+     "size": 24
+    },
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "20",
+     "bottom": "80",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#F7F7FA",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-light"
+   },
+   "elements": [
+    {
+     "id": "eb02a05",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div class=\"tmw-tc\"><p class=\"tmw-eyebrow\">Precio</p></div>"
+     },
+     "elements": []
+    },
+    {
+     "id": "b6c257d",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "¿Cuánto cuesta una migración web SEO?",
+      "header_size": "h2",
+      "_css_classes": "tmw-h2 tmw-narrow",
+      "align": "center"
+     },
+     "elements": []
+    },
+    {
+     "id": "ba4e2f5",
+     "elType": "widget",
+     "widgetType": "text-editor",
+     "isInner": false,
+     "settings": {
+      "editor": "<p>Depende del número de URLs, del tipo de migración y de quién desarrolla la web nueva. Siempre con presupuesto cerrado tras revisar tu web.</p>",
+      "_css_classes": "tmw-lead tmw-narrow",
+      "align": "center"
+     },
+     "elements": []
+    },
+    {
+     "id": "173319c",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div class=\"tmw-prices\"><article class=\"tmw-price\"><div><h3>Web corporativa</h3><p class=\"tmw-price-sub\">Webs de empresa a partir de 50 URLs</p></div><p class=\"tmw-price-amount\"><small>Desde </small><strong>300 €</strong></p><ul><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Planificación en unos 10 días*</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Todos los entregables incluidos</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Seguimiento 90 días</li></ul><a class=\"tmw-link-outline\" href=\"#contacto\">Pedir presupuesto</a></article><article class=\"tmw-price tmw-price--featured\"><span class=\"tmw-price-badge\">Tiendas online</span><div><h3>Ecommerce o web grande</h3><p class=\"tmw-price-sub\">A partir de 100 URLs</p></div><p class=\"tmw-price-amount\"><small>Desde </small><strong>450 €</strong></p><ul><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Planificación de hasta 20 días*</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Fichas, categorías y filtros mapeados</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#15803D\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Seguimiento 90 días</li></ul><a class=\"tmw-link-btn\" href=\"#contacto\">Pedir presupuesto de mi migración</a></article></div><p class=\"tmw-note\">*Los plazos dependen del volumen del proyecto. Presupuesto cerrado tras revisar tu web, sin costes ocultos ni permanencia.</p>"
+     },
+     "elements": []
+    }
+   ]
+  },
+  {
+   "id": "cb019bc",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "24",
+     "row": "24",
+     "isLinked": true,
+     "unit": "px",
+     "size": 24
+    },
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "20",
+     "bottom": "80",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#0D0D14",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-dark"
+   },
+   "elements": [
+    {
+     "id": "51b4b29",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div class=\"tmw-tc\"><p class=\"tmw-eyebrow\">Por qué nosotros</p></div>"
+     },
+     "elements": []
+    },
+    {
+     "id": "cc2f4d8",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Especialistas en SEO, no solo diseñadores",
+      "header_size": "h2",
+      "_css_classes": "tmw-h2 tmw-narrow",
+      "align": "center"
+     },
+     "elements": []
+    },
+    {
+     "id": "e0e69d6",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div class=\"tmw-table-wrap\"><table class=\"tmw-table\"><thead><tr><th scope=\"col\"><span class=\"screen-reader-text\">Aspecto</span></th><th scope=\"col\" class=\"tmw-us\">Con Tiro al Marketing</th><th scope=\"col\">Migración habitual</th></tr></thead><tbody><tr><th scope=\"row\">Cuándo entra el SEO</th><td class=\"tmw-us\">Desde la primera reunión</td><td class=\"tmw-them\">Al final, si entra</td></tr><tr><th scope=\"row\">Redirecciones</th><td class=\"tmw-us\">URL a URL, verificadas</td><td class=\"tmw-them\">Genéricas o todas a la home</td></tr><tr><th scope=\"row\">Revisión antes de publicar</th><td class=\"tmw-us\">Rastreo técnico completo</td><td class=\"tmw-them\">Visual</td></tr><tr><th scope=\"row\">Medición de leads</th><td class=\"tmw-us\">Probada antes del lanzamiento</td><td class=\"tmw-them\">Se revisa cuando falla</td></tr><tr><th scope=\"row\">Después de publicar</th><td class=\"tmw-us\">90 días de seguimiento</td><td class=\"tmw-them\">Fin del proyecto</td></tr></tbody></table></div>"
+     },
+     "elements": []
+    }
+   ]
+  },
+  {
+   "id": "94a2d17",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "24",
+     "row": "24",
+     "isLinked": true,
+     "unit": "px",
+     "size": 24
+    },
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "20",
+     "bottom": "80",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#FFFFFF",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-white"
+   },
+   "elements": [
+    {
+     "id": "344e639",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div class=\"tmw-tc\"><p class=\"tmw-eyebrow\">Opiniones</p></div>"
+     },
+     "elements": []
+    },
+    {
+     "id": "17d4be8",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Lo que dicen nuestros clientes",
+      "header_size": "h2",
+      "_css_classes": "tmw-h2 tmw-narrow",
+      "align": "center"
+     },
+     "elements": []
+    },
+    {
+     "id": "b6d257b",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<figure class=\"tmw-testi\"><p class=\"tmw-stars\"><span aria-hidden=\"true\">★★★★★</span>4,8 de 5 · 4 reseñas en Google</p><blockquote>«Rediseñaron nuestra página con una imagen mucho más moderna, rápida y enfocada en conversiones y para mejorar notablemente nuestra visibilidad en Google en pocas semanas.»</blockquote><figcaption><span class=\"tmw-avatar\" aria-hidden=\"true\">YU</span><span><strong>Yuri Urteaga</strong><small>Reseña verificada en Google</small></span></figcaption></figure>"
+     },
+     "elements": []
+    }
+   ]
+  },
+  {
+   "id": "ff98732",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "24",
+     "row": "24",
+     "isLinked": true,
+     "unit": "px",
+     "size": 24
+    },
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "20",
+     "bottom": "80",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#F7F7FA",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-light"
+   },
+   "elements": [
+    {
+     "id": "9558397",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div class=\"tmw-tc\"><p class=\"tmw-eyebrow\">FAQ</p></div>"
+     },
+     "elements": []
+    },
+    {
+     "id": "0ca0e06",
+     "elType": "widget",
+     "widgetType": "heading",
+     "isInner": false,
+     "settings": {
+      "title": "Preguntas frecuentes sobre migraciones web",
+      "header_size": "h2",
+      "_css_classes": "tmw-h2 tmw-narrow",
+      "align": "center"
+     },
+     "elements": []
+    },
+    {
+     "id": "8191d5f",
+     "elType": "widget",
+     "widgetType": "html",
+     "isInner": false,
+     "settings": {
+      "html": "<div class=\"tmw-faq\"><details open><summary><h3>¿Voy a perder posicionamiento al migrar mi web?</h3></summary><p>Una migración bien planificada debería conservar el posicionamiento a medio plazo. Es normal ver alguna fluctuación las primeras semanas mientras Google rastrea las redirecciones y procesa la web nueva. Nuestro trabajo es reducir ese periodo al mínimo y corregir cualquier error en cuanto aparece.</p></details><details><summary><h3>¿Cuánto cuesta una migración web SEO?</h3></summary><p>Desde 300 € para webs corporativas y desde 450 € para tiendas online o webs grandes. El precio final depende del número de URLs y del tipo de migración, y siempre te damos un presupuesto cerrado después de revisar tu web.</p></details><details><summary><h3>¿Cuánto tiempo tarda Google en procesar una migración?</h3></summary><p>Depende del tamaño de la web y de la frecuencia con la que Google la rastrea. En webs pequeñas y medianas suele ser cuestión de semanas; en webs grandes puede alargarse. Por eso el seguimiento dura 90 días.</p></details><details><summary><h3>¿Qué son las redirecciones 301 y por qué son tan importantes?</h3></summary><p>Una redirección 301 le dice a Google y a los usuarios que una página se ha movido de forma permanente a una nueva dirección. Sin ellas, las URLs antiguas devuelven error 404 y se pierde la autoridad y el tráfico que tenían.</p></details><details><summary><h3>¿Puedo cambiar de dominio sin perder SEO?</h3></summary><p>Sí, siempre que se redirijan todas las URLs al nuevo dominio, se mantenga el contenido importante y se comunique el cambio en Search Console. Es una de las migraciones más delicadas, así que conviene planificarla con tiempo.</p></details><details><summary><h3>Mi web nueva la hace otra agencia. ¿Podéis encargaros solo del SEO de la migración?</h3></summary><p>Sí. Coordinamos con tu equipo de diseño o desarrollo: les entregamos el mapa de redirecciones y los requisitos SEO, revisamos la web antes de publicarla y hacemos el seguimiento posterior.</p></details><details><summary><h3>¿Migráis de Wix, Shopify u otras plataformas a WordPress?</h3></summary><p>Sí. Trabajamos migraciones entre las plataformas más habituales: Wix, Squarespace, Joomla, Shopify, WooCommerce y WordPress.</p></details><details><summary><h3>¿Cuándo debo contactaros?</h3></summary><p>Lo antes posible, idealmente antes de empezar el diseño. Cuanto antes intervenimos, más fácil y barato es evitar errores.</p></details><details><summary><h3>¿Qué pasa si ya he migrado y he perdido tráfico?</h3></summary><p>Hacemos un diagnóstico para localizar URLs sin redirigir, contenido perdido y problemas de indexación, y aplicamos las correcciones. Cuanto antes se actúe, más fácil es recuperar.</p></details></div>\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"Service\", \"@id\": \"https://tiroalmarketing.com/migracion-web-seo/#service\", \"name\": \"Migración web sin perder posicionamiento SEO\", \"serviceType\": \"Migración web SEO\", \"description\": \"Planificación, ejecución y seguimiento de migraciones web (rediseño, cambio de CMS, cambio de dominio y fusión de webs) para conservar el posicionamiento en Google.\", \"url\": \"https://tiroalmarketing.com/migracion-web-seo/\", \"provider\": {\"@id\": \"https://tiroalmarketing.com/#organization\"}, \"areaServed\": {\"@type\": \"Country\", \"name\": \"España\"}, \"offers\": {\"@type\": \"AggregateOffer\", \"priceCurrency\": \"EUR\", \"lowPrice\": \"300\", \"offerCount\": \"2\"}}, {\"@type\": \"FAQPage\", \"@id\": \"https://tiroalmarketing.com/migracion-web-seo/#faq\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"¿Voy a perder posicionamiento al migrar mi web?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Una migración bien planificada debería conservar el posicionamiento a medio plazo. Es normal ver alguna fluctuación las primeras semanas mientras Google rastrea las redirecciones y procesa la web nueva. Nuestro trabajo es reducir ese periodo al mínimo y corregir cualquier error en cuanto aparece.\"}}, {\"@type\": \"Question\", \"name\": \"¿Cuánto cuesta una migración web SEO?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Desde 300 € para webs corporativas y desde 450 € para tiendas online o webs grandes. El precio final depende del número de URLs y del tipo de migración, y siempre te damos un presupuesto cerrado después de revisar tu web.\"}}, {\"@type\": \"Question\", \"name\": \"¿Cuánto tiempo tarda Google en procesar una migración?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Depende del tamaño de la web y de la frecuencia con la que Google la rastrea. En webs pequeñas y medianas suele ser cuestión de semanas; en webs grandes puede alargarse. Por eso el seguimiento dura 90 días.\"}}, {\"@type\": \"Question\", \"name\": \"¿Qué son las redirecciones 301 y por qué son tan importantes?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Una redirección 301 le dice a Google y a los usuarios que una página se ha movido de forma permanente a una nueva dirección. Sin ellas, las URLs antiguas devuelven error 404 y se pierde la autoridad y el tráfico que tenían.\"}}, {\"@type\": \"Question\", \"name\": \"¿Puedo cambiar de dominio sin perder SEO?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Sí, siempre que se redirijan todas las URLs al nuevo dominio, se mantenga el contenido importante y se comunique el cambio en Search Console. Es una de las migraciones más delicadas, así que conviene planificarla con tiempo.\"}}, {\"@type\": \"Question\", \"name\": \"Mi web nueva la hace otra agencia. ¿Podéis encargaros solo del SEO de la migración?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Sí. Coordinamos con tu equipo de diseño o desarrollo: les entregamos el mapa de redirecciones y los requisitos SEO, revisamos la web antes de publicarla y hacemos el seguimiento posterior.\"}}, {\"@type\": \"Question\", \"name\": \"¿Migráis de Wix, Shopify u otras plataformas a WordPress?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Sí. Trabajamos migraciones entre las plataformas más habituales: Wix, Squarespace, Joomla, Shopify, WooCommerce y WordPress.\"}}, {\"@type\": \"Question\", \"name\": \"¿Cuándo debo contactaros?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Lo antes posible, idealmente antes de empezar el diseño. Cuanto antes intervenimos, más fácil y barato es evitar errores.\"}}, {\"@type\": \"Question\", \"name\": \"¿Qué pasa si ya he migrado y he perdido tráfico?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Hacemos un diagnóstico para localizar URLs sin redirigir, contenido perdido y problemas de indexación, y aplicamos las correcciones. Cuanto antes se actúe, más fácil es recuperar.\"}}]}]}</script>"
+     },
+     "elements": []
+    }
+   ]
+  },
+  {
+   "id": "23784d7",
+   "elType": "container",
+   "isInner": false,
+   "settings": {
+    "content_width": "boxed",
+    "boxed_width": {
+     "unit": "px",
+     "size": 1100,
+     "sizes": []
+    },
+    "flex_direction": "column",
+    "flex_gap": {
+     "column": "24",
+     "row": "24",
+     "isLinked": true,
+     "unit": "px",
+     "size": 24
+    },
+    "padding": {
+     "unit": "px",
+     "top": "80",
+     "right": "20",
+     "bottom": "80",
+     "left": "20",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "unit": "px",
+     "top": "56",
+     "right": "16",
+     "bottom": "56",
+     "left": "16",
+     "isLinked": false
+    },
+    "background_background": "classic",
+    "background_color": "#0D0D14",
+    "html_tag": "section",
+    "css_classes": "tmw tmw-dark tmw-contact",
+    "_element_id": "contacto"
+   },
+   "elements": [
+    {
+     "id": "f28be30",
+     "elType": "container",
+     "isInner": true,
+     "settings": {
+      "content_width": "full",
+      "flex_direction": "row",
+      "flex_direction_tablet": "column",
+      "flex_wrap": "nowrap",
+      "flex_align_items": "flex-start",
+      "flex_align_items_tablet": "stretch",
+      "flex_gap": {
+       "column": "60",
+       "row": "60",
+       "isLinked": true,
+       "unit": "px",
+       "size": 60
+      },
+      "padding": {
+       "unit": "px",
+       "top": "0",
+       "right": "0",
+       "bottom": "0",
+       "left": "0",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "2b83b06",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 46,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "column": "20",
+         "row": "20",
+         "isLinked": true,
+         "unit": "px",
+         "size": 20
+        },
+        "padding": {
+         "unit": "px",
+         "top": "0",
+         "right": "0",
+         "bottom": "0",
+         "left": "0",
+         "isLinked": false
+        }
+       },
+       "elements": [
+        {
+         "id": "34f8f0c",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<div><p class=\"tmw-eyebrow\">Valoración gratuita</p></div>"
+         },
+         "elements": []
+        },
+        {
+         "id": "fee68aa",
+         "elType": "widget",
+         "widgetType": "heading",
+         "isInner": false,
+         "settings": {
+          "title": "¿Vas a cambiar de web? Hablemos <span class=\"tmw-red\">antes</span> de que sea tarde",
+          "header_size": "h2",
+          "_css_classes": "tmw-h2"
+         },
+         "elements": []
+        },
+        {
+         "id": "7536887",
+         "elType": "widget",
+         "widgetType": "text-editor",
+         "isInner": false,
+         "settings": {
+          "editor": "<p>Cuéntanos qué vas a cambiar y te enviamos una primera valoración de riesgos sin compromiso.</p>",
+          "_css_classes": "tmw-lead"
+         },
+         "elements": []
+        },
+        {
+         "id": "3734a5e",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<ul class=\"tmw-perks\"><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#22C55E\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Revisamos tu web actual antes de responderte</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#22C55E\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Te decimos qué páginas no puedes perder</li><li><span class=\"tmw-check tmw-check--soft\"><svg viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path d=\"M10 3 4.5 9 2 6.5\" stroke=\"#22C55E\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Presupuesto cerrado, sin letra pequeña</li></ul>"
+         },
+         "elements": []
+        },
+        {
+         "id": "521bcc6",
+         "elType": "container",
+         "isInner": true,
+         "settings": {
+          "content_width": "full",
+          "flex_direction": "row",
+          "flex_wrap": "wrap",
+          "flex_gap": {
+           "column": "12",
+           "row": "12",
+           "isLinked": true,
+           "unit": "px",
+           "size": 12
+          },
+          "padding": {
+           "unit": "px",
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "isLinked": false
+          },
+          "css_classes": "tmw-btns"
+         },
+         "elements": [
+          {
+           "id": "772ce3b",
+           "elType": "widget",
+           "widgetType": "button",
+           "isInner": false,
+           "settings": {
+            "text": "WhatsApp directo",
+            "link": {
+             "url": "https://wa.me/34627329737?text=Hola%2C%20quiero%20valorar%20la%20migraci%C3%B3n%20de%20mi%20web",
+             "is_external": "on",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "_css_classes": "tmw-btn tmw-btn--wa",
+            "selected_icon": {
+             "value": "fab fa-whatsapp",
+             "library": "fa-brands"
+            }
+           },
+           "elements": []
+          },
+          {
+           "id": "f46fdd6",
+           "elType": "widget",
+           "widgetType": "button",
+           "isInner": false,
+           "settings": {
+            "text": "627 329 737",
+            "link": {
+             "url": "tel:+34627329737",
+             "is_external": "",
+             "nofollow": "",
+             "custom_attributes": ""
+            },
+            "_css_classes": "tmw-btn tmw-btn--ghost",
+            "selected_icon": {
+             "value": "fas fa-phone-alt",
+             "library": "fa-solid"
+            }
+           },
+           "elements": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "9ac4c81",
+       "elType": "container",
+       "isInner": true,
+       "settings": {
+        "content_width": "full",
+        "width": {
+         "unit": "%",
+         "size": 54,
+         "sizes": []
+        },
+        "width_tablet": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "width_mobile": {
+         "unit": "%",
+         "size": 100,
+         "sizes": []
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+         "column": "18",
+         "row": "18",
+         "isLinked": true,
+         "unit": "px",
+         "size": 18
+        },
+        "padding": {
+         "unit": "px",
+         "top": "36",
+         "right": "32",
+         "bottom": "36",
+         "left": "32",
+         "isLinked": false
+        },
+        "css_classes": "tmw-card-dark"
+       },
+       "elements": [
+        {
+         "id": "4fc5ef4",
+         "elType": "widget",
+         "widgetType": "html",
+         "isInner": false,
+         "settings": {
+          "html": "<p class=\"tmw-card-title\">Solicita tu valoración</p><p class=\"tmw-card-sub\">Los campos marcados con * son obligatorios.</p>"
+         },
+         "elements": []
+        },
+        {
+         "id": "91a1e38",
+         "elType": "widget",
+         "widgetType": "shortcode",
+         "isInner": false,
+         "settings": {
+          "shortcode": "[contact-form-7 id=\"PEGA-AQUI-ID-FORM-CONTACTO\" title=\"Migración web – Contacto\"]"
+         },
+         "elements": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

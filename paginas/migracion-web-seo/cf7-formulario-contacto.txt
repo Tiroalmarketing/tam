@@ -1,0 +1,17 @@
+<div class="tmw-form tmw-form--2col">
+<label class="tmw-f-label">Nombre *
+[text* your-name autocomplete:name]</label>
+<label class="tmw-f-label">Email *
+[email* your-email autocomplete:email]</label>
+<label class="tmw-f-label">Web actual *
+[url* web-actual placeholder "https://"]</label>
+<label class="tmw-f-label">Tipo de migración
+[select tipo-migracion "Rediseño" "Cambio de CMS" "Cambio de dominio" "Fusión de webs" "Aún no lo sé"]</label>
+<label class="tmw-f-label">Fecha prevista
+[text fecha-prevista placeholder "Ej.: marzo 2027"]</label>
+<label class="tmw-f-label">Teléfono
+[tel your-phone autocomplete:tel]</label>
+<div class="tmw-full">[acceptance privacidad] He leído y acepto la <a href="/politica-de-privacidad/" target="_blank">política de privacidad</a>. [/acceptance]</div>
+<div class="tmw-full">[hidden origen "Contacto – Migración web"][hidden riesgo-test][submit "Recibir valoración de mi migración"]</div>
+<p class="tmw-f-note tmw-full">Te respondemos en menos de 24 h laborables</p>
+</div>
