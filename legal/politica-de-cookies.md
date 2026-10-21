@@ -14,15 +14,23 @@ Las cookies son pequeños archivos que una web guarda en tu navegador cuando la 
 
 ## 3. Qué cookies utilizamos y para qué
 
-### Cookies técnicas (no requieren tu consentimiento)
-Son necesarias para que la web funcione y para recordar tu decisión sobre las cookies. No se pueden desactivar desde nuestro panel, aunque sí desde tu navegador.
+Las cookies se agrupan en las mismas categorías que verás en nuestro panel de configuración.
 
-### Cookies analíticas (solo con tu consentimiento)
+### Necesarias (siempre activas, no requieren tu consentimiento)
+Son cookies técnicas imprescindibles para que la web funcione y para recordar tu decisión sobre las cookies. No se pueden desactivar desde nuestro panel, aunque sí desde tu navegador.
+
+### Funcionales (solo con tu consentimiento)
+Permiten funciones adicionales, como compartir contenidos en redes sociales o mostrar contenidos de terceros. Actualmente no utilizamos cookies de esta categoría.
+
+### Rendimiento (solo con tu consentimiento)
+Permiten analizar indicadores técnicos de rendimiento de la web, como la velocidad de carga. Actualmente no utilizamos cookies de esta categoría.
+
+### Analíticas (solo con tu consentimiento)
 Nos permiten medir cuántas personas visitan la web, qué páginas consultan y cómo navegan por ellas, para mejorar sus contenidos y su funcionamiento. Utilizamos:
 - **Google Analytics 4**, de Google.
 - **Microsoft Clarity**, de Microsoft, que genera mapas de calor y grabaciones de la navegación. Clarity oculta por defecto el texto que escribes en los formularios.
 
-### Cookies publicitarias (solo con tu consentimiento)
+### Publicidad (solo con tu consentimiento)
 Nos permiten medir la eficacia de nuestras campañas y mostrarte anuncios relacionados con tus intereses en otras webs y redes sociales. Utilizamos:
 - **Píxel de Meta**, de Meta Platforms (Facebook e Instagram).
 - **Medición de conversiones de Google**, de Google.
@@ -34,24 +42,24 @@ También utilizamos **Ahrefs Web Analytics**, una herramienta de estadísticas q
 
 | Cookie | Proveedor | Tipo | Finalidad | Duración |
 |---|---|---|---|---|
-| cookieyes-consent | Tiro al Marketing (servicio de CookieYes) | Técnica | Guardar tus preferencias sobre cookies | 1 año |
+| cookieyes-consent | Tiro al Marketing (servicio de CookieYes) | Necesaria | Guardar tus preferencias sobre cookies | 1 año |
 | _ga | Google | Analítica | Distinguir a los usuarios de forma anónima | 2 años |
 | _ga_* | Google | Analítica | Mantener el estado de la sesión | 2 años |
 | _clck | Microsoft (Clarity) | Analítica | Reconocer al mismo navegador entre visitas | 1 año |
 | _clsk | Microsoft (Clarity) | Analítica | Agrupar las páginas vistas en una misma sesión | 1 día |
 | CLID | Microsoft (Clarity) | Analítica | Identificar la primera visita registrada por Clarity | 1 año |
 | MUID | Microsoft | Analítica | Identificar al navegador en los servicios de Microsoft | 1 año |
-| _fbp | Meta | Publicitaria | Medir y mostrar anuncios de Meta | 3 meses |
-| _gcl_au | Google | Publicitaria | Medir las conversiones de los anuncios de Google | 3 meses |
+| _fbp | Meta | Publicidad | Medir y mostrar anuncios de Meta | 3 meses |
+| _gcl_au | Google | Publicidad | Medir las conversiones de los anuncios de Google | 3 meses |
 
 ## 4. Cómo aceptar, rechazar o cambiar tu consentimiento
 
 Cuando entras por primera vez en la web, te mostramos un aviso en el que puedes:
-- **Aceptar todas** las cookies.
-- **Rechazar todas** las cookies que no son técnicas.
-- **Personalizar** tu elección por categorías.
+- **Aceptar todo:** activar todas las categorías.
+- **Rechazar todo:** mantener solo las cookies necesarias.
+- **Personalizar:** activar o desactivar cada categoría y confirmar con **Guardar mis preferencias**.
 
-Mientras no aceptes, solo se utilizan las cookies técnicas.
+Todas las categorías, salvo las necesarias, están desactivadas hasta que tú las actives. Mientras no aceptes, solo se utilizan las cookies necesarias.
 
 Puedes **cambiar o retirar tu consentimiento en cualquier momento**, de forma tan sencilla como lo diste, desde el enlace **«Configuración de cookies»** que encontrarás al pie de todas las páginas. Retirar el consentimiento no afecta a la licitud del uso de las cookies anterior a la retirada.
 
