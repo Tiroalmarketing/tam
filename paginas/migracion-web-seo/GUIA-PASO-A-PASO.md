@@ -1,4 +1,4 @@
-# Landing «Migración web SEO» · Guía de montaje paso a paso
+# Landing «Migración web» · Guía de montaje paso a paso
 
 Tiempo estimado: 30–40 minutos. Nada queda visible hasta el paso 7.
 
@@ -6,7 +6,7 @@ Tiempo estimado: 30–40 minutos. Nada queda visible hasta el paso 7.
 
 | Archivo | Para qué sirve |
 |---|---|
-| `plantilla-elementor-migracion-web-seo.json` | La landing completa para importar en Elementor |
+| `plantilla-elementor-migracion-web.json` | La landing completa para importar en Elementor |
 | `cf7-formulario-hero.txt` | Código del formulario corto (arriba de la página) |
 | `cf7-formulario-contacto.txt` | Código del formulario completo (final de la página) |
 | `logo-almark.svg`, `logo-grupalia.webp` | Logos de clientes. Ya van incrustados en la plantilla; los archivos son por si los quieres en la biblioteca de medios |
@@ -72,15 +72,15 @@ SiteGround → Site Tools → Seguridad → Copias de seguridad → **Crear copi
 
 ## Paso 2 · Importar la plantilla en Elementor
 1. **Plantillas → Plantillas guardadas** (en algunas versiones: *Elementor → Plantillas*).
-2. Botón **Importar plantillas** (arriba) → elige `plantilla-elementor-migracion-web-seo.json` → **Importar ahora**.
-3. Aparecerá en la lista como **«Migración web SEO – Tiro al Marketing»**.
+2. Botón **Importar plantillas** (arriba) → elige `plantilla-elementor-migracion-web.json` → **Importar ahora**.
+3. Aparecerá en la lista como **«Migración web – Tiro al Marketing»**.
 
 ---
 
 ## Paso 3 · Crear la página
 1. **Páginas → Añadir nueva**.
 2. Título: `Migración web sin perder posicionamiento SEO`.
-3. Enlace permanente (slug): `migracion-web-seo`. Página superior: **ninguna**.
+3. Enlace permanente (slug): `migracion-web`. Página superior: **ninguna**.
 4. **Ajustes de Kadence** de la página: copia los mismos que tiene la página de abogados (ancho completo, título oculto, sin espaciado vertical del contenido). Si no los recuerdas, abre la de abogados en otra pestaña y compáralos.
 5. **Guardar borrador** (no publiques todavía) → **Editar con Elementor**.
 
@@ -88,7 +88,7 @@ SiteGround → Site Tools → Seguridad → Copias de seguridad → **Crear copi
 
 ## Paso 4 · Insertar la plantilla
 1. En el lienzo vacío pulsa el icono de **carpeta** («Añadir plantilla»).
-2. Pestaña **Mis plantillas** → «Migración web SEO – Tiro al Marketing» → **Insertar**.
+2. Pestaña **Mis plantillas** → «Migración web – Tiro al Marketing» → **Insertar**.
 3. Si pregunta por importar los ajustes de página, elige **No**.
 
 ---
@@ -114,10 +114,11 @@ La plantilla tiene dos widgets **Shortcode** con un texto provisional:
 
 ## Paso 7 · SEO (Yoast) y publicación
 1. En la página (editor de WordPress), caja **Yoast SEO**:
-   - **Frase clave:** `migración web seo`
+   - **Frase clave:** `migración web`
+   - **Frases clave relacionadas** (si tienes Yoast Premium): `consultoría de migración web`, `migración de página web`
    - **Título SEO:** `Migración Web sin Perder Posicionamiento SEO | Tiro al Marketing`
-   - **Meta descripción:** `Cambia de web, CMS o dominio sin perder posiciones: redirecciones URL a URL, revisión técnica y seguimiento 90 días. Desde 300 €. Pide tu valoración.`
-   - Pestaña **Avanzado → Título de la miga de pan:** `Migración web SEO`
+   - **Meta descripción:** `Consultoría de migración web para cambiar de web, CMS o dominio sin perder posiciones: redirecciones URL a URL y seguimiento 90 días. Desde 300 €.`
+   - Pestaña **Avanzado → Título de la miga de pan:** `Migración web`
 2. **Publicar**.
 3. **Purgar caché:** SiteGround Optimizer → *Purgar caché* (o el botón de la barra superior de WordPress).
 
@@ -132,7 +133,7 @@ La plantilla tiene dos widgets **Shortcode** con un texto provisional:
    - Clic en WhatsApp → `clic_whatsapp`. Clic en «Llamar ahora» → `clic_llamar`.
    - Primer uso del test de riesgo → aparece el evento `test_riesgo_migracion` en la capa de datos. Si quieres medirlo en GA4, crea un activador de *Evento personalizado* con ese nombre y una etiqueta de evento GA4. Es opcional.
 3. **Valida el schema** en https://validator.schema.org con la URL de la página.
-4. **Search Console → Inspección de URLs** → `https://tiroalmarketing.com/migracion-web-seo/` → **Solicitar indexación**.
+4. **Search Console → Inspección de URLs** → `https://tiroalmarketing.com/migracion-web/` → **Solicitar indexación**.
 
 ---
 
