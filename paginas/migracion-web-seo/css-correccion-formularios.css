@@ -1,0 +1,6 @@
+/* Corrección formularios CF7 – pegar al final del bloque <style> del primer widget HTML del hero, justo antes de </style> */
+.tmw .tmw-form>p,.tmw .tmw-field>p{display:contents}
+.tmw .tmw-field{min-width:0}
+.tmw .wpcf7-form-control-wrap{display:block;width:100%}
+.tmw .wpcf7 input[type=email],.tmw .wpcf7 input[type=url],.tmw .wpcf7 input[type=text],.tmw .wpcf7 input[type=tel],.tmw .wpcf7 select{background:#252533}
+.tmw .tmw-f-note{display:block}

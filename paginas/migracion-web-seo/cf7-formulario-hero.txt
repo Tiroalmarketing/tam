@@ -1,11 +1,15 @@
 <div class="tmw-form">
-<label class="tmw-f-label">Tu email *
-[email* your-email autocomplete:email placeholder "nombre@empresa.com"]</label>
-<label class="tmw-f-label">Web actual *
-[url* web-actual placeholder "https://tuweb.com"]</label>
-<fieldset class="tmw-chips"><legend>¿Qué vas a cambiar?</legend>
-[radio tipo-migracion use_label_element default:1 "Rediseño" "Cambio de CMS" "Cambio de dominio" "Fusión de webs" "Aún no lo sé"]</fieldset>
-[acceptance privacidad] He leído y acepto la <a href="/politica-de-privacidad/" target="_blank">política de privacidad</a>. [/acceptance]
-<div>[hidden origen "Hero – Migración web"][hidden riesgo-test][submit "Quiero migrar sin perder tráfico"]</div>
-<p class="tmw-f-note">Respuesta en menos de 24 h laborables · Sin compromiso</p>
+
+<div class="tmw-field"><label class="tmw-f-label">Tu email * [email* your-email autocomplete:email placeholder "nombre@empresa.com"]</label></div>
+
+<div class="tmw-field"><label class="tmw-f-label">Web actual * [url* web-actual placeholder "https://tuweb.com"]</label></div>
+
+<div class="tmw-field"><fieldset class="tmw-chips"><legend>¿Qué vas a cambiar?</legend>[radio tipo-migracion use_label_element default:1 "Rediseño" "Cambio de CMS" "Cambio de dominio" "Fusión de webs" "Aún no lo sé"]</fieldset></div>
+
+<div class="tmw-field">[acceptance privacidad] He leído y acepto la <a href="/politica-de-privacidad/" target="_blank">política de privacidad</a>. [/acceptance]</div>
+
+<div class="tmw-field">[hidden origen "Hero – Migración web"][hidden riesgo-test][submit "Quiero migrar sin perder tráfico"]</div>
+
+<div class="tmw-field"><span class="tmw-f-note">Respuesta en menos de 24 h laborables · Sin compromiso</span></div>
+
 </div>
