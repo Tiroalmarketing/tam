@@ -128,9 +128,9 @@ La plantilla tiene dos widgets **Shortcode** con un texto provisional:
 
 ## Paso 8 · Pruebas después de publicar
 1. **Envía los dos formularios** con tu email y comprueba que llegan a `info@tiroalmarketing.com` con todos los campos.
-2. **GA4 → Informes → Tiempo real** (tu web usa gtag directamente, sin GTM):
+2. **GTM → Vista previa** (contenedor `GTM-PVX2KRVD`) sobre la página:
    - Envío de formulario → `envio_formulario`. Clic en WhatsApp → `clic_whatsapp`. Clic en «Llamar ahora» → `clic_llamar`.
-   - Primer uso del test de riesgo → `test_riesgo_migracion`. Si quieres verlo en informes, márcalo como evento clave o créale una dimensión.
+   - Primer uso del test de riesgo → evento `test_riesgo_migracion` en la capa de datos. Para enviarlo a GA4, crea un activador de *Evento personalizado* `test_riesgo_migracion` y una etiqueta *Evento de GA4* con el mismo nombre.
 3. **Valida el schema** en https://validator.schema.org con la URL de la página.
 4. **Search Console → Inspección de URLs** → `https://tiroalmarketing.com/migracion-web/` → **Solicitar indexación**.
 
