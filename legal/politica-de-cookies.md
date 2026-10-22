@@ -1,6 +1,6 @@
 # Política de cookies
 
-**Última actualización:** [fecha de publicación]
+**Última actualización:** 22 de octubre de 2026
 
 ## 1. Responsable
 
@@ -20,10 +20,10 @@ Las cookies se agrupan en las mismas categorías que verás en nuestro panel de 
 Son cookies técnicas imprescindibles para que la web funcione y para recordar tu decisión sobre las cookies. No se pueden desactivar desde nuestro panel, aunque sí desde tu navegador.
 
 ### Funcionales (solo con tu consentimiento)
-Permiten funciones adicionales, como compartir contenidos en redes sociales o mostrar contenidos de terceros. Actualmente no utilizamos cookies de esta categoría.
+Permiten funciones adicionales, como compartir contenidos en redes sociales o mostrar contenidos de terceros.
 
 ### Rendimiento (solo con tu consentimiento)
-Permiten analizar indicadores técnicos de rendimiento de la web, como la velocidad de carga. Actualmente no utilizamos cookies de esta categoría.
+Permiten analizar indicadores técnicos de rendimiento de la web, como la velocidad de carga.
 
 ### Analíticas (solo con tu consentimiento)
 Nos permiten medir cuántas personas visitan la web, qué páginas consultan y cómo navegan por ellas, para mejorar sus contenidos y su funcionamiento. Utilizamos:
@@ -44,7 +44,7 @@ También utilizamos **Ahrefs Web Analytics**, una herramienta de estadísticas q
 |---|---|---|---|---|
 | cookieyes-consent | Tiro al Marketing (servicio de CookieYes) | Necesaria | Guardar tus preferencias sobre cookies | 1 año |
 | _ga | Google | Analítica | Distinguir a los usuarios de forma anónima | 2 años |
-| _ga_* | Google | Analítica | Mantener el estado de la sesión | 2 años |
+| \_ga\_* | Google | Analítica | Mantener el estado de la sesión | 2 años |
 | _clck | Microsoft (Clarity) | Analítica | Reconocer al mismo navegador entre visitas | 1 año |
 | _clsk | Microsoft (Clarity) | Analítica | Agrupar las páginas vistas en una misma sesión | 1 día |
 | CLID | Microsoft (Clarity) | Analítica | Identificar la primera visita registrada por Clarity | 1 año |
