@@ -1,0 +1,15 @@
+<div class="tmw-form">
+
+<div class="tmw-field"><label class="tmw-f-label">Tu email * [email* your-email autocomplete:email placeholder "nombre@empresa.com"]</label></div>
+
+<div class="tmw-field"><label class="tmw-f-label">Web actual (si tienes) [url web-actual placeholder "https://tuweb.com"]</label></div>
+
+<div class="tmw-field"><fieldset class="tmw-chips"><legend>¿Qué necesitas?</legend>[radio tipo-web use_label_element default:1 "Web corporativa" "Tienda online" "Rediseño de mi web" "Aún no lo sé"]</fieldset></div>
+
+<div class="tmw-field">[acceptance privacidad] He leído y acepto la <a href="/politica-de-privacidad/" target="_blank">política de privacidad</a>. [/acceptance]</div>
+
+<div class="tmw-field">[hidden origen "Hero – Diseño web SEO"][hidden calculadora][submit "Quiero mi presupuesto"]</div>
+
+<div class="tmw-field"><span class="tmw-f-note">Respuesta en menos de 24 h laborables · Sin compromiso</span></div>
+
+</div>
